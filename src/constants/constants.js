@@ -1,7 +1,7 @@
 export const DATA = {
 	DOM: {
 		ROAD_MAP_EL: document.querySelector(".roadmap__rects"),
-		HEADER_NAV: document.querySelector(".header__nav"),
+		NAV_EL: document.querySelector(".header__nav"),
 	},
 	MENU: [
 		{

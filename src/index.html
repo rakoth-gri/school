@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/index.min.css" />
-		<title>MY SITE</title>
+		<title>GRI школа фронтенда</title>
 		<link rel="icon" href="./icons/logo.svg" type="image/svg+xml" />
 		<script src="./index.js" defer type="module"></script>
 	</head>
@@ -14,28 +14,45 @@
 			<a href="index.html" title="НА ГЛАВНУЮ">
 				<div class="header__logo"></div>
 			</a>
+
+			<!-- **MICRO-DATA-BLOCK** -->
+			<div class="header__contacts" itemscope itemtype="http://schema.org/Organization">
+				<a target="_blank" href="tel:+70001234567">
+					<span itemprop="telephone" class="header__contacts_tel"> +7 495 876-54-32 </span>
+				</a>
+				<a target="_blank" href="mailto:nowhere@yandex.ru">
+					<span itemprop="email" class="header__contacts_mail"> example@exam.ru </span>
+				</a>
+			</div>
+
 			<nav class="header__nav">
 				<!-- DYNAMIC RENDER  -->
 			</nav>
-			<img src="./icons/triangular.svg" alt="" class="header__triangular" />
-			<img src="./icons/triangular.svg" alt="" class="header__triangular" />
-			<img src="./icons/triangular.svg" alt="" class="header__triangular" />
+
+			<img src="./icons/triangular.svg" alt="triangular" class="header__triangular" />
+			<img src="./icons/triangular.svg" alt="triangular" class="header__triangular" />
+			<img src="./icons/triangular.svg" alt="triangular" class="header__triangular" />
 		</header>
 
 		<h1>Изучение <span style="color: var(--app-blue-color)">WEB-разработки. </span></h1>
 
 		<main class="container">
 			<section class="roadmap" id="roadmap">
+				<img src="./icons/star_brown.svg" alt="star" class="roadmap__star" />
+				<img src="./icons/star_green.svg" alt="star" class="roadmap__star" />
+				<img src="./icons/star_yellow.svg" alt="star" class="roadmap__star" />
+                <img src="./icons/star_purple.svg" alt="star" class="roadmap__star" />
 				<h2>Карта обучающегося</h2>
 				<div class="roadmap__line"></div>
-				<div class="roadmap__rects"></div>
-				<!-- DYNAMIC RENDER  -->
+				<div class="roadmap__rects">
+					<!-- DYNAMIC RENDER  -->
+				</div>
 			</section>
 		</main>
 
 		<footer class="footer" id="contacts">
-			<img src="./icons/triangular.svg" alt="" class="footer__triangular" />
-			<img src="./icons/triangular.svg" alt="" class="footer__triangular" />
+			<img src="./icons/triangular.svg" alt="triangular" class="footer__triangular" />
+			<img src="./icons/triangular.svg" alt="triangular" class="footer__triangular" />
 			<h2>Контакты</h2>
 			<div class="footer__flex">
 				<div class="footer__block"></div>

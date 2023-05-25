@@ -13,7 +13,7 @@ function renderRoadmapRects() {
 
 renderHeaderMenuLinks();
 function renderHeaderMenuLinks() {
-	DATA.DOM.HEADER_NAV.innerHTML = `
+	DATA.DOM.NAV_EL.innerHTML = `
         <ul class="header__nav_ul">
             ${DATA.MENU.map(
 				({ href, text }, i) => `
@@ -24,10 +24,11 @@ function renderHeaderMenuLinks() {
         </ul>`;
 }
 
-DATA.DOM.HEADER_NAV.addEventListener("click", (e) => {
+DATA.DOM.NAV_EL.addEventListener("click", (e) => {
 	if (e.target.tagName !== "A") return;
 	document.querySelectorAll(".header__nav a").forEach((link) => link.classList.remove("activeLink"));
-	e.target.classList.add("activeLink");
+	
+    e.target.classList.add("activeLink");
 
 	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
 });
