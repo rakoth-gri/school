@@ -6,80 +6,46 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/index.min.css" />
 		<title>MY SITE</title>
+		<link rel="icon" href="./icons/logo.svg" type="image/svg+xml" />
+		<script src="./index.js" defer type="module"></script>
 	</head>
 	<body>
 		<header class="header">
-			<div class="header__logo"></div>
-
+			<a href="index.html" title="НА ГЛАВНУЮ">
+				<div class="header__logo"></div>
+			</a>
+			<nav class="header__nav">
+				<!-- DYNAMIC RENDER  -->
+			</nav>
 			<img src="./icons/triangular.svg" alt="" class="header__triangular" />
 			<img src="./icons/triangular.svg" alt="" class="header__triangular" />
 			<img src="./icons/triangular.svg" alt="" class="header__triangular" />
 		</header>
 
-		<main class="container">
-			<section class="roadmap">
-				<h2>Карта процесса изучения</h2>
+		<h1>Изучение <span style="color: var(--app-blue-color)">WEB-разработки. </span></h1>
 
+		<main class="container">
+			<section class="roadmap" id="roadmap">
+				<h2>Карта обучающегося</h2>
 				<div class="roadmap__line"></div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 1 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 2 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 3 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 4 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 5 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 6 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
-				<div class="roadmap__rect">
-					<strong class="roadmap__digit"> 7 </strong>
-					<p class="roadmap__text">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga tenetur ipsa et aspernatur
-						quod quia perferendis cumque, vel quam, officia eveniet, eos dolorum animi tempora alias ullam
-						maxime consequatur.
-					</p>
-				</div>
+				<div class="roadmap__rects"></div>
+				<!-- DYNAMIC RENDER  -->
 			</section>
 		</main>
 
-		<h1>Изучение Веб-разработки</h1>
+		<footer class="footer" id="contacts">
+			<img src="./icons/triangular.svg" alt="" class="footer__triangular" />
+			<img src="./icons/triangular.svg" alt="" class="footer__triangular" />
+			<h2>Контакты</h2>
+			<div class="footer__flex">
+				<div class="footer__block"></div>
+				<div class="footer__block"></div>
+				<div class="footer__block"></div>
+			</div>
+		</footer>
+
+		<div class="top">
+			<img src="./icons/top.svg" alt="top" class="top__img" />
+		</div>
 	</body>
 </html>
