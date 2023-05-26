@@ -1,16 +1,5 @@
 import { DATA } from "./constants/constants.js";
 
-renderRoadmapRects();
-function renderRoadmapRects() {
-	DATA.DOM.ROAD_MAP_EL.innerHTML = DATA.ROAD_MAP.map(
-		({ strong, text, h3 }) => `<div class="roadmap__rect">
-                <strong class="roadmap__digit"> ${strong} </strong>
-                <h3>${h3}</h3>
-                <p class="roadmap__text"> ${text} </p>
-            </div>`
-	).join("");
-}
-
 renderHeaderMenuLinks();
 function renderHeaderMenuLinks() {
 	DATA.DOM.NAV_EL.innerHTML = `
@@ -24,12 +13,33 @@ function renderHeaderMenuLinks() {
         </ul>`;
 }
 
+renderRoadmapRects();
+function renderRoadmapRects() {
+	DATA.DOM.ROAD_MAP_EL.innerHTML = DATA.ROAD_MAP.map(
+		({ strong, text, h2, src }, i) => `
+			<div class="roadmap__rect">
+                <strong class="roadmap__digit"> ${strong} </strong>
+                <h2>${h2}</h2>
+                <p class="roadmap__text"> ${text} </p>				
+				<img src="${src}" alt="lang" class="${`roadmap__img ${i === 2 ? "css" : ""}`}" />			
+            </div>`
+	).join("");
+}
+
+renderRoadmapLangs();
+function renderRoadmapLangs() {
+	DATA.DOM.ROAD_MAP_EL.insertAdjacentHTML(
+		"afterbegin",
+		DATA.ROAD_MAP_LANGS.map(
+			({ alt, title, className, src }) => `<img src="${src}" alt="${alt}" class="${className}" title="${title}"/>`
+		).join("")
+	);
+}
+
 DATA.DOM.NAV_EL.addEventListener("click", (e) => {
 	if (e.target.tagName !== "A") return;
 	document.querySelectorAll(".header__nav a").forEach((link) => link.classList.remove("activeLink"));
-	
-    e.target.classList.add("activeLink");
-
+	e.target.classList.add("activeLink");
 	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
 });
 

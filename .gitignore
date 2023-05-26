@@ -1,6 +1,7 @@
 **/node_modules 
 /packages
 /src/sass
+/src/icons/stars
 
 .DS_Store
 Thumbs.db
