@@ -5,15 +5,20 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/index.min.css" />
-		<title>GRI школа фронтенда</title>
+		<title>GRI_FRONT_CAMP</title>
 		<link rel="icon" href="./icons/logo.svg" type="image/svg+xml" />
 		<script src="./index.js" defer type="module"></script>
 	</head>
 	<body>
 		<header class="header">
 			<a href="index.html" title="НА ГЛАВНУЮ">
-				<div class="header__logo"></div>
+				<div class="header__logo">GRI-Camp</div>
 			</a>
+
+			<div class="header__theme">
+				Тема:
+				<img src="./icons/light.svg" alt="theme" class="header__theme_img" />
+			</div>
 
 			<!-- **MICRO-DATA-BLOCK** -->
 			<div class="header__contacts" itemscope itemtype="http://schema.org/Organization">
@@ -34,14 +39,44 @@
 			<img src="./icons/triangular.svg" alt="triangular" class="header__triangular" />
 		</header>
 
-		<h1>Изучение <span style="color: var(--app-blue-color)">WEB-разработки. </span></h1>
-
 		<main class="container">
+			<section class="introduction" id="introduction">
+				<div class="introduction__h1">
+					<h1>
+						<em class="introduction__h1_brand"> GRI-Camp </em> <br />
+						<span style="color: var(--app-blue-color)"> Web-программирование </span>
+						для чайников и не только...
+					</h1>
+					<span class="introduction__h1_desc">
+						Индивидуальные и групповые занятия по Web-программированию, консультации и менторство.
+					</span>
+				</div>
+				<div class="introduction__image">
+					<picture class="introduction__image_poster">
+						<source srcset="./img/thumb/poster_min.jpg" media="(max-width: 800px)" />
+						<img src="./img/poster-ellipse.png" alt="poster" />
+					</picture>
+					<!-- <img
+						src="./img/poster-ellipse.png"
+						alt="poster"
+						class="introduction__image_poster"
+						loading="lazy"
+					/> -->
+				</div>
+			</section>
 			<section class="roadmap" id="roadmap">
 				<!-- DYNAMIC RENDER  -->
 				<h2>Карта обучающегося</h2>
 				<div class="roadmap__line"></div>
 				<div class="roadmap__rects">
+					<!-- DYNAMIC RENDER  -->
+				</div>
+			</section>
+
+			<section class="faq" id="faq">
+				<!-- DYNAMIC RENDER  -->
+				<h2>Часто задаваемые вопросы</h2>
+				<div class="faq__container">
 					<!-- DYNAMIC RENDER  -->
 				</div>
 			</section>
