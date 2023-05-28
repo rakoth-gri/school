@@ -4,8 +4,8 @@
 <line x1="30" y1="51" x2="30" y2="59" stroke="#E16363" stroke-width="2" stroke-linecap="round"/>
 <line x1="30" y1="1" x2="30" y2="9" stroke="#E16363" stroke-width="2" stroke-linecap="round"/>
 <g filter="url(#filter0_d_13_164)">
-<circle cx="30.1465" cy="29.6464" r="15" transform="rotate(45 30.1465 29.6464)" fill="#1D1A1A"/>
-<circle cx="30.1465" cy="29.6464" r="13" transform="rotate(45 30.1465 29.6464)" stroke="#E16363" stroke-width="4"/>
+<circle cx="30.1465" cy="29.6464" r="15" transform="rotate(45 30.1465 29.6464)" fill="#E16363"/>
+<circle cx="30.1465" cy="29.6464" r="12.5" transform="rotate(45 30.1465 29.6464)" stroke="#E16363" stroke-width="5"/>
 </g>
 <line x1="44.9958" y1="45.9099" x2="50.6526" y2="51.5668" stroke="#E16363" stroke-width="2" stroke-linecap="round"/>
 <line x1="15.2972" y1="14.7972" x2="9.64036" y2="9.14039" stroke="#E16363" stroke-width="2" stroke-linecap="round"/>

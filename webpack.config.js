@@ -97,7 +97,7 @@ module.exports = {
 				],
 				type: "asset/resource",
 				generator: {
-					filename: "img/[name].[ext]",
+					filename: "img/[name][ext]",
 				},
 			},
 			{
@@ -119,13 +119,13 @@ module.exports = {
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: "asset/resource",
 				generator: {
-					filename: "fonts/[name].[ext]",
+					filename: "fonts/[name][ext]",
 				},
 			},
 		],
 	},
 	devServer: {
-		port: 3013,
+		port: 4000,
 		open: true,
 		watchFiles: path.join(__dirname, "src"),
 		client: {
@@ -140,22 +140,22 @@ module.exports = {
 				collapseWhitespace: !isDev,
 			},
 		}),
-		new FileManagerPlugin({
-			events: {
-				onEnd: {
-					copy: [
-						{
-							source: path.resolve(__dirname, "src", "img"),
-							destination: path.resolve(__dirname, "dist/img"),
-						},
-						{
-							source: path.resolve(__dirname, "src", "icons"),
-							destination: path.resolve(__dirname, "dist", "icons"),
-						},
-					],
-				},
-			},
-		}),
+		// new FileManagerPlugin({
+		// 	events: {
+		// 		onEnd: {
+		// 			copy: [
+		// 				{
+		// 					source: path.resolve(__dirname, "src", "img"),
+		// 					destination: path.resolve(__dirname, "dist/img"),
+		// 				},
+		// 				{
+		// 					source: path.resolve(__dirname, "src", "icons"),
+		// 					destination: path.resolve(__dirname, "dist", "icons"),
+		// 				},
+		// 			],
+		// 		},
+		// 	},
+		// }),
 		new MiniCssExtractPlugin({
 			filename: "[name].[contenthash].css",
 		}),
