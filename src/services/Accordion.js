@@ -18,7 +18,7 @@ export default class Accordion {
             <article class="faq__item">
 				<div class="faq__item_header">
 					<h3>${title}</h3>
-					<button class="${`faq__item_trigger ${id === "0" ? "active" : ""}`}" id="${id}"></button>
+					<i class="${`faq__item_trigger bi bi-chevron-up ${id === "0" ? "active" : ""}`}" id="${id}"></i>
 				</div>
 				<hr>
 				<div class="faq__item_content" style="${id === "0" && "max-height: max-content;"}" id="${id}">
@@ -37,7 +37,7 @@ export default class Accordion {
 	}
 
 	addListenerToContainerHandler = (e) => {
-		if (e.target.tagName !== "BUTTON") return;
+		if (e.target.tagName !== "I") return;
 
 		e.target.classList.toggle("active");
 

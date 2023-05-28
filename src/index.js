@@ -2,6 +2,8 @@ import { DATA } from "./constants/constants.js";
 import { themeState } from "./services/theme.js";
 import Accordion from './services/Accordion.js';
 
+// import "./sass/index.sass"
+
 // **RENDER MENU LINKS**
 renderHeaderMenuLinks();
 function renderHeaderMenuLinks() {
@@ -80,11 +82,10 @@ function moveToHead(offset) {
 }
 
 // **CHANGE_THEME
-document.querySelector(".header__theme").addEventListener("click", function (e) {
-	themeState.changeTheme();
-	console.log(themeState.currentTheme)
-	
-	document.querySelector(".header__theme_img").src = `./icons/${themeState.currentTheme}.svg`;	
+document.querySelector(".header__theme_icon").addEventListener("click", function (e) {
+	themeState.changeTheme();	
+	document.querySelector(".header__theme_img").src = `./icons/${themeState.currentTheme}.svg`;
+	document.querySelector(".header__theme span").textContent = `${themeState.currentTheme}:`;		
 });
 
 

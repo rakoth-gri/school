@@ -6,6 +6,10 @@
 .DS_Store
 Thumbs.db
 
+/dist/**/*
+
 *.map
 
-**/poster.jpg
+**/*/poster.jpg
+
+**/package-lock.json
