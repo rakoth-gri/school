@@ -4,6 +4,7 @@ export const DATA = {
 		NAV_EL: document.querySelector(".header__nav"),
 		TECH_GUIDE_CARDS_EL: document.querySelector(".techGuide__cards"),
 		SIDEBAR_EL: document.querySelector(".sidebar"),
+		FORM_EL: document.querySelector(".callback__form"),
 	},
 	MENU_LIST: [
 		{
@@ -30,6 +31,10 @@ export const DATA = {
 			href: "#faq",
 			text: "Вопросы-ответы",
 		},
+		{
+			href: "#callback",
+			text: "Обратная связь",
+		}
 	],
 	ROAD_MAP_LIST: [
 		{
@@ -299,6 +304,56 @@ export const DATA = {
 			title: "Будут ли ссылки на документацию в течении занятия ?",
 			content:
 				"Безусловно, важнейший навык программиста - умение мсамостоятельно читать и разбираться в технической документации",
+		},
+	],
+	FORM_LIST: [
+		{
+			name: "name",
+			type: "text",
+			placeholder: "Имя",
+		},
+		{
+			name: "phone",
+			type: "tel",
+			placeholder: "+7 (___) ___ - __ - __",
+		},
+	],
+	OPTION_LIST: [
+		{
+			value: "",
+			text: "Выберите направление",
+		},
+		{
+			value: "figma",
+			text: "figma",
+		},
+		{
+			value: "html",
+			text: "html",
+		},
+		{
+			value: "css",
+			text: "css",
+		},
+		{
+			value: "js",
+			text: "js",
+		},
+		{
+			value: "js_dom",
+			text: "js_dom",
+		},
+		{
+			value: "typescript",
+			text: "typescript",
+		},
+		{
+			value: "react",
+			text: "react",
+		},
+		{
+			value: "redux",
+			text: "redux",
 		},
 	],
 };

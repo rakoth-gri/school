@@ -2,6 +2,7 @@ import { DATA } from "./constants/constants.js";
 import { themeState } from "./services/theme.js";
 import Faq from "./services/Faq.js";
 import Tech_guide from "./services/Tech_guide.js"
+import Form from "./services/Form.js";
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
@@ -55,6 +56,9 @@ function renderRoadmapLangs() {
 
 // **TECH_GUIDE_SECTION**
 const tech_guide = new Tech_guide({ container: DATA.DOM.TECH_GUIDE_CARDS_EL, list: DATA.TECH_GUIDE_LIST, sidebar: DATA.DOM.SIDEBAR_EL })
+
+// **CALLBACK_SECTION**
+const form = new Form({ container: DATA.DOM.FORM_EL, list: DATA.FORM_LIST, options: DATA.OPTION_LIST })
 
 // **TOP BUTTON**
 document.addEventListener("scroll", () => {

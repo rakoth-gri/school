@@ -1,0 +1,45 @@
+.callback
+    @include sectProps
+
+    &__form
+        padding: var(--app-lg-size)
+        width: 50%
+
+        &_block
+            display: flex
+            align-items: center
+
+        &_el
+            width: 80%
+            margin: var(--app-md-size) auto
+            
+
+input[type="submit"]
+    @include sectBtns
+    position: static
+
+input[type="checkbox"]
+    opacity: 0
+    width: 0px
+    height: 0px
+    margin: 0px!important
+
+label[data-style="checkbox"]
+    width: 35px
+    height: 35px
+    border: 2px solid var(--app-blue-color)
+    margin-left: 10%
+    border-radius: 5px
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &::before
+        @include svgIcon
+        display: none
+        width: 75%
+        height: 75%
+        background: url("../img/done.png") center/contain no-repeat
+
+input[type="checkbox"]:checked  + label::before
+    display: inline-block

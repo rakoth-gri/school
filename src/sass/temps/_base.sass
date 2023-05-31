@@ -101,9 +101,22 @@ input, select, button
     color: inherit
     font-size: inherit
     font-family: inherit
-    outline: none
+    outline-color: var(--app-blue-color)
     border: none
     background: transparent
+    padding: var(--app-md-size)
+
+input::placeholder
+    opacity: 0.6
+    transition: 0.3s all ease
+
+input:focus::placeholder
+    transform: scale(0.1)
+    opacity: 0.1
+
+option
+    color: var(--app-default-font)
+    background: var(--app-default-bg)
 
 button
     cursor: pointer
