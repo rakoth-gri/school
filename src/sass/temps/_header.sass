@@ -1,0 +1,116 @@
+.header
+    background-color: var(--app-blue-color)
+    width: 100%
+    height: 170px
+    position: relative
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    font-size: inherit
+    font-family: "Gotham"
+    font-weight: 300
+    color: var(--app-white-color)
+
+    &__triangular
+        position: absolute
+        bottom: 0
+        transform: translateX(-50%)
+
+        &:first-of-type
+            left: 0%
+
+        &:nth-of-type(2)
+            left: 50%
+
+        &:last-of-type
+            left: 100%
+
+    &__logo
+        width: auto
+        height: 70px
+        position: absolute
+        top: 50%
+        left: 4%
+        transform: translate(0, -50%)
+        display: flex
+        align-items: center
+        font-weight: 500
+        font-family: "Roboto", serif
+
+        &::before
+            @include svgIcon
+            background: url("../icons/logo.svg") center/contain no-repeat
+            margin-right: 6px
+
+    &__nav
+        padding: var(--app-md-size)
+        width: auto
+
+        &_ul
+            display: flex
+            align-items: flex-start
+            justify-content: space-evenly
+            height: 80px
+
+            a
+                color: var(--app-light-color)
+                font-variant: small-caps
+                margin-right: var(--app-lg-size)
+
+                &:hover
+                    transform: scale(1.02)
+
+            .activeLink
+                color: var(--app-brown-color)
+
+    &__contacts
+        display: flex
+        align-items: center
+        flex-direction: column
+        height: 80px
+        justify-content: flex-start
+
+        &_tel, &_mail
+            letter-spacing: 0.4px
+            display: flex
+            align-items: center
+
+            &::before
+                @include svgIcon
+                width: 32px
+                height: 32px
+                margin-right: 0.5rem
+
+        &_tel::before
+            background: url("../icons/phone.svg") center/contain no-repeat
+
+        &_mail::before
+            background: url("../icons/mail.svg") center/contain no-repeat
+
+    &__theme
+        position: absolute
+        width: auto
+        padding: var(--app-md-size)
+        bottom: 0px
+        right: 10%
+        display: flex
+        align-items: center
+        letter-spacing: 0.6px        
+        font-weight: 300
+        cursor: pointer
+
+        &_img
+            margin-left: 0.5rem
+            width: 32px
+            height: 32px
+
+        &_icon
+            font-size: var(--app-xl-size)
+            transform: rotateZ(90deg)
+            margin-right: .6rem
+            color: var(--app-default-color)
+            transition: transform 0.3s linear
+
+            &:hover
+                color: var(--app-logo-color)

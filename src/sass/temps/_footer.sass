@@ -1,0 +1,30 @@
+.footer
+    padding: var(--app-lg-size)
+    background-color: var(--app-blue-color)
+    color: var(--app-white-color)
+    position: relative
+    overflow: hidden
+
+    &__triangular
+        position: absolute
+        top: 0
+        transform: translateX(-50%) rotateZ(180deg)
+
+        &:first-of-type
+            left: 0%
+
+        &:last-of-type
+            left: 100%
+
+    &__flex
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+
+    &__block
+        padding: var(--app-md-size)
+        flex: 1 1 450px
+        max-width: 450px
+        height: 300px
+        border: 4px solid var(--app-danger-color)
+        margin: var(--app-md-size)

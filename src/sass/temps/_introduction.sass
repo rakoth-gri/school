@@ -1,0 +1,31 @@
+.introduction
+    @include sectProps
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    overflow: hidden
+
+    &__h1, &__image
+        animation: swimming-out 0.75s ease-in 0.5s forwards 
+        opacity: .15
+        transform: translateX(-30%)
+        width: 45%
+
+    &__h1
+        
+        &_brand
+            font-family: "Gotham"
+            color: var(--app-brown-color)
+            font-style: normal
+
+        &_desc
+            line-height: 30px
+            font-weight: 300
+            opacity: .85
+
+    &__image
+        &_poster
+            width: 110%
+
+// Анимация прописана выше
+

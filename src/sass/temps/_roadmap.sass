@@ -1,0 +1,103 @@
+.roadmap
+    margin: var(--app-md-size)
+    position: relative
+
+    &__rect
+        width: 35%
+        height: 350px
+        border-radius: var(--app-lg-br)
+        margin: calc(4 * var(--app-md-size)) 0
+        @include sectProps
+        opacity: .1
+        transform: translate(-30%, -7%)
+        transition: all .3s linear
+
+        &.active
+            opacity: 1
+            transform: translate(0%, 0%)
+
+        &:nth-of-type(2n+1)
+            border: 4px solid var(--app-brown-color)
+
+    &__digit
+        color: var(--app-brown-color)
+        font-family: "Gotham"
+        font-size: calc(1.5*var(--app-xl-size))
+        position: absolute
+        right: -10%
+        top: -3rem
+
+    &__text
+        font-weight: 300
+        padding: var(--app-sm-size) var(--app-sm-size) var(--app-sm-size) calc(2.2 * var(--app-lg-size))
+        line-height: calc(20px * 1.5)
+        text-align: justify
+        overflow-y: auto
+        height: 80%
+
+        &::-webkit-scrollbar
+            height: 12px
+            width: 12px
+
+        &::-webkit-scrollbar-track
+            background: var(--app-default-font)
+
+        &::-webkit-scrollbar-thumb
+            background-color: var(--app-brown-color)
+            border-radius: 2px
+
+    &__img
+        position: absolute
+        width: 50px
+        height: 50px
+        top: 3%
+        right: 2%
+
+    &__line
+        width: auto
+        height: 100%
+        position: absolute
+        left: 2.5%
+        border-left: 6px dashed var(--app-green-color)
+        z-index: 3
+
+    &__lang
+        position: absolute
+        width: 120px
+        height: 120px
+
+        &:nth-of-type(2n+1)
+            right: 5%
+
+        &:nth-of-type(2n)
+            right: 11%
+
+        &:first-of-type
+            top: 5%
+
+        &:nth-of-type(2)
+            top: calc(5% + 6% * 1)
+
+        &:nth-of-type(3)
+            top: calc(5% + 6% * 2)
+
+        &:nth-of-type(4)
+            top: calc(5% + 6% * 3)
+
+        &:nth-of-type(5)
+            top: calc(5% + 6% * 4)
+
+        &:nth-of-type(6)
+            top: calc(5% + 6% * 5)
+
+        &:nth-of-type(7)
+            top: calc(5% + 6% * 6)
+
+        &:nth-of-type(8)
+            top: calc(5% + 6% * 7)
+
+        &:nth-of-type(9)
+            top: calc(5% + 6% * 8)
+
+        &:nth-of-type(10)
+            top: calc(5% + 6% * 9)

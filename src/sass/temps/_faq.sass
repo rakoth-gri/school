@@ -1,0 +1,63 @@
+.faq
+    @include sectProps
+    
+    &__container
+        padding: var(--app-lg-size)
+
+    &__item
+
+        &_header
+            padding: var(--app-sm-size)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            letter-spacing: 0.4px
+
+        &_trigger
+            width: 40px
+            height: 40px
+            transition: 0.3s all linear
+            cursor: pointer
+            transform: rotateZ(180deg)
+            font-size: var(--app-xl-size)
+            color: var(--app-default-color)
+            display: flex
+            align-items: center
+            justify-content: center
+
+            // &::before
+            //     @include svgIcon
+                // background: url("../icons/open.svg") center/contain no-repeat
+
+            &.active
+                transform: rotateZ(360deg)
+                color: var(--app-green-color)               
+
+        &_content
+            overflow: hidden
+            max-height: 0px
+            line-height: 1.5em
+            transition: 0.3s all ease-out
+
+        &_body
+            padding: var(--app-sm-size)
+
+            p
+                font-weight: 300
+
+    hr
+        width: 80%
+        height: 2px
+        margin: 0 auto
+        background-color: #d3cbcb
+        opacity: .5
+        position: relative
+        top: -1rem
+        border: none
+
+    h3
+        margin: var(--app-sm-size)
+
+        &::first-letter
+            color: var(--app-blue-color)
+            font-size: 1.25em

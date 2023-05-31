@@ -1,6 +1,6 @@
 **/node_modules 
 /packages
-/src/sass
+# /src/sass
 /src/icons/stars
 
 .DS_Store
