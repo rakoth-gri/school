@@ -3,6 +3,8 @@ export default class Tech_Guide {
 		this.$container = container;
 		this.list = list;
 		this.$sidebar = sidebar;
+		console.log(this.$container, this.list, this.$sidebar);
+
 		// METHODS:
 		this.renderTechGuideCards(this.$container, this.list);
 		this.addListenerToContainer();
@@ -24,7 +26,10 @@ export default class Tech_Guide {
 					<div class="card__item_card2">
 						<h3>В КУРСЕ:</h3>
 						<ul class="card__item_desc"> 
-                            ${ul.slice(0,3).map((li) => `<li> ${li} </li>`).join("")} 
+                            ${ul
+								.slice(0, 3)
+								.map((li) => `<li> ${li} </li>`)
+								.join("")} 
                         </ul>
 						<button class="card__item_btn" id="${id}"> Подробнее </button>
 					</div>
@@ -57,7 +62,7 @@ export default class Tech_Guide {
 		this.$container.addEventListener("click", this.containerClickHandler);
 	}
 
-	sidebarClickHandler(e) {		
+	sidebarClickHandler(e) {
 		switch (e.target.tagName) {
 			case "BUTTON":
 				console.log(e.target.dataset.tech);

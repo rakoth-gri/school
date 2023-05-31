@@ -1,6 +1,7 @@
 import { DATA } from "./constants/constants.js";
 import { themeState } from "./services/theme.js";
-import Accordion from "./services/Accordion.js";
+import Faq from "./services/Faq.js";
+import Tech_guide from "./services/Tech_guide.js"
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
@@ -52,30 +53,10 @@ function renderRoadmapLangs() {
 	);
 }
 
-// **RENDER TECH GUIDE 3D CARDS**
-renderTechGuideCards();
-function renderTechGuideCards() {
-	DATA.DOM.TECH_GUIDE_CARDS_EL.insertAdjacentHTML(
-		"beforeend",
-		DATA.TECH_GUIDE_LIST.map(
-			({ id, tech, figcaption, p, src }) =>
-				`<article class="card__item">
-					<div class="card__item_card1">
-						<h3 style="text-transform: uppercase">${tech}</h3>
-						<img src="${src}" alt="" class="card__item_logo" loading="lazy" />
-						<figcaption class="card__item_figcaption"> ${figcaption} </figcaption>
-					</div>
-					<div class="card__item_card2">
-						<h3>В КУРСЕ:</h3>
-						<p class="card__item_desc">	${p} </p>
-						<button class="card__item_link" id="${id}"> Подробнее </button>
-					</div>
-			</article>`
-		).join("")
-	);
-}
+// **TECH_GUIDE_SECTION**
+const tech_guide = new Tech_guide({ container: DATA.DOM.TECH_GUIDE_CARDS_EL, list: DATA.TECH_GUIDE_LIST, sidebar: DATA.DOM.SIDEBAR_EL })
 
-// **TOP BUTTON FUNCS**
+// **TOP BUTTON**
 document.addEventListener("scroll", () => {
 	if (document.documentElement.scrollTop > 500) {
 		document.querySelector(".top").classList.add("active");
@@ -113,8 +94,8 @@ document.querySelector(".header__theme_icon").addEventListener("click", function
 	document.querySelector(".header__theme span").textContent = `${themeState.currentTheme}:`;
 });
 
-// ** ACCORDION
-const accordion = new Accordion({ container: ".faq__container", array: DATA.ACCORDION_LIST });
+// ** Faq
+const faq = new Faq({ container: ".faq__container", array: DATA.FAQ_LIST });
 
 // ** LAZY AND ANIME OBSERVER
 document.querySelectorAll(".lazy").forEach((img) => lazyObserver.observe(img));
