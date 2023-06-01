@@ -36,7 +36,7 @@ export default class Accordion {
 		this.contents = document.querySelectorAll(".faq__item_content");
 	}
 
-	addListenerToContainerHandler = (e) => {
+	mouseEventHandler = (e) => {
 		if (e.target.tagName !== "I") return;
 
 		e.target.classList.toggle("active");
@@ -51,6 +51,6 @@ export default class Accordion {
 	};
 
 	addListenerToContainer() {
-		this.$container.addEventListener("click", this.addListenerToContainerHandler);
+		this.$container.addEventListener("click", this.mouseEventHandler);
 	}
 }

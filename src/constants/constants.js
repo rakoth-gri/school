@@ -5,6 +5,7 @@ export const DATA = {
 		TECH_GUIDE_CARDS_EL: document.querySelector(".techGuide__cards"),
 		SIDEBAR_EL: document.querySelector(".sidebar"),
 		FORM_EL: document.querySelector(".callback__form"),
+		MODAL_EL: document.querySelector(".modal"),
 	},
 	MENU_LIST: [
 		{
@@ -34,7 +35,7 @@ export const DATA = {
 		{
 			href: "#callback",
 			text: "Обратная связь",
-		}
+		},
 	],
 	ROAD_MAP_LIST: [
 		{
@@ -176,7 +177,7 @@ export const DATA = {
 		},
 		{
 			id: "4",
-			tech: "js dom",
+			tech: "js_dom",
 			figcaption:
 				"Онлайн-сервис для разработки интерфейсов для Web-проектов. Поддерживает совместную работу в режиме реального времени",
 
@@ -315,13 +316,13 @@ export const DATA = {
 		{
 			name: "phone",
 			type: "tel",
-			placeholder: "+7 (___) ___ - __ - __",
+			placeholder: "+7 XXX XXX XX XX",
 		},
 	],
 	OPTION_LIST: [
 		{
 			value: "",
-			text: "Выберите направление",
+			text: "Выберите направление:",
 		},
 		{
 			value: "figma",
@@ -356,4 +357,9 @@ export const DATA = {
 			text: "redux",
 		},
 	],
+	REG_EXP: {
+		name: [/^[A-Z\sА-Яа-яa-z]{2,40}$/, "введите корректное имя"],
+		phone: [/^\+?\d\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$/, "введите корректный номер"],
+		select: [/^[a-z_]{1,40}$/, "выберите курс"],
+	},
 };

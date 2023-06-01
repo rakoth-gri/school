@@ -10,7 +10,8 @@
 :root
     // color scheme
     --app-blue-color: #2C6E83
-    --app-danger-color: #650B0B
+    --app-blue-opacity-color: rgba(43, 102, 121, .91)
+    --app-danger-color: #f80606
     --app-logo-color: #B8A70A
     --app-black-color: #000000
     --app-green-color: #00843D
@@ -43,12 +44,14 @@
     --app-sm-br: 0.5rem
     --app-md-br: 0.7rem
     --app-lg-br: 1rem
+    --app-xl-br: 1.5rem
 
 body
     color: var(--app-default-font)
     background: var(--app-default-bg)
     font-size: 18px
     font-family: "Roboto"
+    position: relative
 
     /* SCROLL STYLING Chrome/Edge/Safari */
     &::-webkit-scrollbar
@@ -107,7 +110,8 @@ input, select, button
     padding: var(--app-md-size)
 
 input::placeholder
-    opacity: 0.6
+    color: inherit
+    opacity: 0.63
     transition: 0.3s all ease
 
 input:focus::placeholder
@@ -129,6 +133,7 @@ li
     line-height: 1.49
 
     &::first-letter
+        text-transform: capitalize
         font-size: 1.15em
         color: var(--app-brown-color)
         text-align: justify
@@ -137,7 +142,7 @@ img
     display: block
 
 p
-    text-align-last: left
+    text-align: left
     font-family: "Roboto"
     font-weight: 400
 
@@ -152,3 +157,12 @@ p
 
 .activeLink
     color: var(--app-brown-color)
+
+.error
+    position: absolute
+    bottom: -10px
+    left: 50%
+    opacity: 1
+    color: var(--app-danger-color)
+    font-size: 1.1rem
+    transform: translateX(-50%)

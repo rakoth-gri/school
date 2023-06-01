@@ -140,22 +140,22 @@ module.exports = {
 				collapseWhitespace: !isDev,
 			},
 		}),
-		// new FileManagerPlugin({
-		// 	events: {
-		// 		onEnd: {
-		// 			copy: [
-		// 				{
-		// 					source: path.resolve(__dirname, "src", "img"),
-		// 					destination: path.resolve(__dirname, "dist/img"),
-		// 				},
-		// 				{
-		// 					source: path.resolve(__dirname, "src", "icons"),
-		// 					destination: path.resolve(__dirname, "dist", "icons"),
-		// 				},
-		// 			],
-		// 		},
-		// 	},
-		// }),
+		new FileManagerPlugin({
+			events: {
+				onEnd: {
+					copy: [
+						{
+							source: path.resolve(__dirname, "src", "img"),
+							destination: path.resolve(__dirname, "dist/img"),
+						},
+						{
+							source: path.resolve(__dirname, "src", "icons"),
+							destination: path.resolve(__dirname, "dist", "icons"),
+						},
+					],
+				},
+			},
+		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].[contenthash].css",
 		}),

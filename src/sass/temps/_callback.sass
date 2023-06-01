@@ -1,18 +1,56 @@
 .callback
     @include sectProps
+    border-radius: var(--app-xl-br)
+    color: var(--app-light-color)
+    background: linear-gradient(180deg, rgba(39, 118, 143, 0.9) 97.4%, rgba(44, 110, 131, 0) 100%)
+    font-family: "Montserrat"
+
+    &__flex
+        display: flex
 
     &__form
         padding: var(--app-lg-size)
         width: 50%
+        font-weight: 300
 
         &_block
             display: flex
             align-items: center
+            position: relative
 
+            &::after
+                content: ""
+                display: inline-block
+                position: absolute
+                width: 10px
+                height: 10px
+                top: 8%
+                right: 8%
+                background: url("../icons/required.svg") center/contain no-repeat
+
+            &:last-of-type, &:nth-of-type(4)
+                &::after
+                    display: none
+
+            &:nth-of-type(4)
+                margin: var(--app-md-size) 0
         &_el
             width: 80%
             margin: var(--app-md-size) auto
-            
+            font-weight: 300
+
+    &__desc
+        width: 50%
+        padding: var(--app-lg-size)
+        text-align: justify
+        line-height: 1.5em
+        p
+            margin: var(--app-md-size)
+            font-weight: 400
+            font-family: "Montserrat"
+            text-indent: 10px
+            text-align: justify
+            opacity: 0.84
 
 input[type="submit"]
     @include sectBtns
@@ -27,12 +65,13 @@ input[type="checkbox"]
 label[data-style="checkbox"]
     width: 35px
     height: 35px
-    border: 2px solid var(--app-blue-color)
+    border: 2px solid var(--app-light-color)
     margin-left: 10%
     border-radius: 5px
     display: flex
     align-items: center
     justify-content: center
+    margin-right: 6px
 
     &::before
         @include svgIcon

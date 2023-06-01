@@ -1,10 +1,11 @@
+import { DATA } from "../constants/constants.js";
+import Form from "./Form.js";
+
 export default class Tech_Guide {
 	constructor({ container, list, sidebar }) {
 		this.$container = container;
 		this.list = list;
 		this.$sidebar = sidebar;
-		console.log(this.$container, this.list, this.$sidebar);
-
 		// METHODS:
 		this.renderTechGuideCards(this.$container, this.list);
 		this.addListenerToContainer();
@@ -65,12 +66,13 @@ export default class Tech_Guide {
 	sidebarClickHandler(e) {
 		switch (e.target.tagName) {
 			case "BUTTON":
-				console.log(e.target.dataset.tech);
+				DATA.DOM.FORM_EL.select.value = e.target.dataset.tech;				
+				document.querySelector("#callback").scrollIntoView({ behavior: "smooth", block: "start" });
 				break;
-			default:
-				this.classList.toggle("active");
+			default:				
 				break;
 		}
+		this.classList.toggle("active");
 	}
 
 	addListenerToSidebar() {

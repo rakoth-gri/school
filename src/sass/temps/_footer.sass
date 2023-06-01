@@ -1,20 +1,21 @@
 .footer
     padding: var(--app-lg-size)
-    background-color: var(--app-blue-color)
+    background-color: var(--app-blue-opacity-color)
     color: var(--app-white-color)
     position: relative
     overflow: hidden
+    border-radius: var(--app-xl-br) var(--app-xl-br) 0 0
 
-    &__triangular
-        position: absolute
-        top: 0
-        transform: translateX(-50%) rotateZ(180deg)
+    // &__triangular
+    //     position: absolute
+    //     top: 0
+    //     transform: translateX(-50%) rotateZ(180deg)
 
-        &:first-of-type
-            left: 0%
+    //     &:first-of-type
+    //         left: 0%
 
-        &:last-of-type
-            left: 100%
+    //     &:last-of-type
+    //         left: 100%
 
     &__flex
         display: flex

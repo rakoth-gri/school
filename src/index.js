@@ -1,7 +1,7 @@
 import { DATA } from "./constants/constants.js";
 import { themeState } from "./services/theme.js";
 import Faq from "./services/Faq.js";
-import Tech_guide from "./services/Tech_guide.js"
+import Tech_guide from "./services/Tech_guide.js";
 import Form from "./services/Form.js";
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
@@ -28,37 +28,32 @@ DATA.DOM.NAV_EL.addEventListener("click", (e) => {
 	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// **RENDER ROADMAP ARTICLES**
-renderRoadmapRects();
-function renderRoadmapRects() {
-	DATA.DOM.ROAD_MAP_EL.innerHTML = DATA.ROAD_MAP_LIST.map(
-		({ strong, text, h2, src, alt }, i) => `
+// **ROADMAP_SECTION**
+(function renderRoadmapRects() {
+	DATA.DOM.ROAD_MAP_EL.insertAdjacentHTML(
+		"beforeend",
+		DATA.ROAD_MAP_LIST.map(
+			({ strong, text, h2, src, alt, className, title }, i) => `
 			<article class="roadmap__rect">
                 <strong class="roadmap__digit"> ${strong} </strong>
                 <h3>${h2}</h3>
                 <p class="roadmap__text"> ${text} </p>				
 				<img src="" data-src="${src}" alt="${alt}" class="${`roadmap__img ${i === 2 ? "css" : ""} lazy`}" />			
-            </article>`
-	).join("");
-}
-
-// **RENDER TECH IMAGES**
-renderRoadmapLangs();
-function renderRoadmapLangs() {
-	DATA.DOM.ROAD_MAP_EL.insertAdjacentHTML(
-		"afterbegin",
-		DATA.ROAD_MAP_LIST.map(
-			({ alt, title, className, src }) =>
-				`<img  src="" data-src="${src}" alt="${alt}" class="${className} lazy" title="${title}"/>`
+            </article>
+			<img src="" data-src="${src}" class="${className} lazy" alt="${alt}" title="${title}"/>`
 		).join("")
 	);
-}
+})();
 
 // **TECH_GUIDE_SECTION**
-const tech_guide = new Tech_guide({ container: DATA.DOM.TECH_GUIDE_CARDS_EL, list: DATA.TECH_GUIDE_LIST, sidebar: DATA.DOM.SIDEBAR_EL })
+const tech_guide = new Tech_guide({
+	container: DATA.DOM.TECH_GUIDE_CARDS_EL,
+	list: DATA.TECH_GUIDE_LIST,
+	sidebar: DATA.DOM.SIDEBAR_EL,
+});
 
 // **CALLBACK_SECTION**
-const form = new Form({ container: DATA.DOM.FORM_EL, list: DATA.FORM_LIST, options: DATA.OPTION_LIST })
+const form = new Form({ container: DATA.DOM.FORM_EL, list: DATA.FORM_LIST, options: DATA.OPTION_LIST });
 
 // **TOP BUTTON**
 document.addEventListener("scroll", () => {
