@@ -1,0 +1,44 @@
+.features
+    font-weight: 300
+    font-family: "Montserrat"
+    @include sectProps
+
+    &__control
+        left: 5%
+        position: absolute
+        display: flex
+        align-items: center
+
+        &_next
+            font-size: var(--app-xl-size)
+            color: var(--app-default-color)
+            margin-right: var(--app-sm-size)
+
+            &:hover
+                color: var(--app-green-color)
+
+.slider__body
+    width: 40%
+    margin: var(--app-lg-size) auto
+    overflow: hidden
+
+    &_tracker
+        display: flex
+
+    &_item
+        padding: var(--app-md-size)
+
+        p
+            font-family: inherit
+            font-weight: 300
+            color: var(--app-default-color)
+            padding: var(--app-md-size)
+            line-height: 1.5em
+
+            
+
+    h3
+        text-align-last: left
+        letter-spacing: 0.3px
+        &::first-letter
+            text-transform: uppercase

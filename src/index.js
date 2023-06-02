@@ -1,8 +1,10 @@
 import { DATA } from "./constants/constants.js";
 import { themeState } from "./services/theme.js";
+// SERVICE CLASSES
 import Faq from "./services/Faq.js";
 import Tech_guide from "./services/Tech_guide.js";
 import Form from "./services/Form.js";
+import Features from "./services/Features.js";
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
@@ -27,6 +29,9 @@ DATA.DOM.NAV_EL.addEventListener("click", (e) => {
 	e.target.classList.add("activeLink");
 	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
+// **FEATURES SLIDER**
+const slider = new Features({container: DATA.DOM.FEATURES__SLIDER_EL, list: DATA.FEATURES_LIST});
 
 // **ROADMAP_SECTION**
 (function renderRoadmapRects() {
