@@ -13,7 +13,7 @@ export const DATA = {
 			text: "О нас",
 		},
 		{
-			href: "#specificity",
+			href: "#features",
 			text: "Как здесь учат",
 		},
 		{
