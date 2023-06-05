@@ -1,8 +1,10 @@
 import { DATA } from "./constants/constants.js";
 import { themeState } from "./services/theme.js";
+// SERVICE CLASSES
 import Faq from "./services/Faq.js";
 import Tech_guide from "./services/Tech_guide.js";
 import Form from "./services/Form.js";
+import { AutoFeatures } from "./services/Features.js";
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
@@ -28,6 +30,14 @@ DATA.DOM.NAV_EL.addEventListener("click", (e) => {
 	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
+// **FEATURES SLIDER**
+const autoSlider = new AutoFeatures({
+	container: DATA.DOM.FEATURES__SLIDER_EL,
+	list: DATA.FEATURES_LIST,
+	dottes: DATA.DOM.FEATURES__DOTTES_EL,
+});
+
+window.addEventListener("resize", () => autoSlider.cssProps());
 // **ROADMAP_SECTION**
 (function renderRoadmapRects() {
 	DATA.DOM.ROAD_MAP_EL.insertAdjacentHTML(
