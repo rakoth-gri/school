@@ -8,6 +8,9 @@
         position: absolute
         display: flex
         align-items: center
+        padding: var(--app-md-size) 0px
+        cursor: pointer
+        color: var(--app-default-font)
 
         &_next
             font-size: var(--app-xl-size)
@@ -15,30 +18,64 @@
             margin-right: var(--app-sm-size)
 
             &:hover
-                color: var(--app-green-color)
+                color: var(--app-purple-color)
+
+    &__dottes
+        @include sectProps
+        display: flex
+        justify-content: center
+        font-family: "Gotham"
+        font-weight: 400
+
+        &_item
+            width: 40px
+            height: 40px
+            background-color: var(--app-brown-color)
+            border-radius: 50%
+            margin: 0 var(--app-md-size)
+            display: flex
+            align-items: center
+            justify-content: center
+            cursor: pointer
+
+            &:hover
+                color: var(--app-blue-color)
+
+            &.active
+                color: var(--app-white-color)
+                background: var(--app-blue-color)
 
 .slider__body
     width: 40%
     margin: var(--app-lg-size) auto
     overflow: hidden
+    background-color: var(--app-purple-color)
+    border-radius: var(--app-sm-size)
+    color: var(--app-light-color)
 
     &_tracker
         display: flex
+        transition: all 0.35s ease
 
     &_item
         padding: var(--app-md-size)
+        letter-spacing: 0.36px
 
         p
             font-family: inherit
             font-weight: 300
             color: var(--app-default-color)
-            padding: var(--app-md-size)
+            padding: var(--app-md-size) 0px
             line-height: 1.5em
+            text-align: justify
 
-            
+            &::first-letter
+                text-transform: uppercase
+                font-size: 1.25em
+                color: var(--app-blue-color)
 
     h3
-        text-align-last: left
-        letter-spacing: 0.3px
+        text-align: center
+        color: var(--app-blue-color)
         &::first-letter
             text-transform: uppercase

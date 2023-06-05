@@ -1,11 +1,11 @@
 export default class Features {
-	constructor({ container, list }) {
+	constructor({ container, list, dottes }) {
 		// dom
 		this.$container = container;
-		this.tracker = null;
-		this.list = list;
-		this.slider = null;
+		this.$tracker = null;
+		this.$slider = null;
 		// логика:
+		this.list = list;
 		this.count = 0;
 		this.interval = null;
 		this.sliderBodyWidth = null;
@@ -31,6 +31,16 @@ export default class Features {
 						})
 						.join("")}
                 </div>
+				<div class="features__dottes">
+					${this.list
+						.map(
+							(_, index) =>
+								`<span class="${`features__dottes_item ${index === 0 && "active"}`}" id="${index}"> 0${
+									index + 1
+								} </span>`
+						)
+						.join("")}
+				</div>
                 <div class="features__control">
                     <i class="bi bi-arrow-right features__control_next"></i>
                     Особенности нашего обучения
@@ -39,25 +49,30 @@ export default class Features {
         </div>`
 		);
 
-		this.tracker = document.querySelector(".slider__body_tracker");
-		this.slider = document.querySelector(".slider__body");
+		this.$tracker = document.querySelector(".slider__body_tracker");
+		this.$slider = document.querySelector(".slider__body");
 	}
 
 	cssProps() {
-		this.sliderBodyWidth = this.slider.offsetWidth;
-
-		for (let item of this.tracker.querySelectorAll(".slider__body_item")) {
+		this.sliderBodyWidth = this.$slider.offsetWidth;
+		for (let item of this.$tracker.querySelectorAll(".slider__body_item")) {
 			item.style.width = `${this.sliderBodyWidth}px`;
 		}
-
-		this.tracker.style.width = `${this.list.length * this.sliderBodyWidth}px`;
+		this.$tracker.style.width = `${this.list.length * this.sliderBodyWidth}px`;
 	}
 
 	changeCount = (e) => {
-		console.log(e);
+		if (!(e.target.closest(".features__control") || e.target.closest(".features__dottes_item"))) return;
 
-		if (e.target.closest(".features__control_next")) console.log("here");
-		this.Increment();
+		switch (true) {
+			case !!e.target.closest(".features__control"):
+				this.Increment();
+				break;
+			default:
+				this.count = +e.target.id;
+				this.checkCount(this.count);
+				break;
+		}
 	};
 
 	addEventToSlider() {
@@ -73,10 +88,16 @@ export default class Features {
 		if (count >= this.list.length) this.count = 0;
 		if (count < 0) this.count = this.list.length - 1;
 		this.showActiveSlide(this.count);
+		this.showActiveButton(this.count);
+	}
+
+	showActiveButton(index) {
+		document.querySelectorAll(".features__dottes_item").forEach((dot) => dot.classList.remove("active"));
+		document.querySelectorAll(".features__dottes_item")[index].classList.add("active");
 	}
 
 	showActiveSlide(count) {
-		this.tracker.style.transform = `translateX(-${count * this.sliderBodyWidth}px)`;
+		this.$tracker.style.transform = `translateX(-${count * this.sliderBodyWidth}px)`;
 	}
 
 	setCurrentIndex(imageURL) {
@@ -86,31 +107,30 @@ export default class Features {
 		this.showActiveSlide(this.count);
 		document.body.style.overflow = "hidden";
 	}
+
+	builder() {
+		this.autoSlider();
+		this.stopAutoSlider();
+		this.resumeAutoSlider();
+	}
 }
 
-// Наследование ---------------------
-// export class EduSlider extends Slider {
-// 	constructor(option) {
-// 		super(option);
-// 		// вызываем новые методы
-// 		// this.autoSlider();
-// 		// this.stopAutoSlider();
-// 		// this.resumeAutoSlider();
-// 	}
+// Расширение ---------------------
+export class AutoFeatures extends Features {
+	constructor(option) {
+		super(option);
+		this.builder();		
+	}
 
-// 	autoSlider() {
-// 		this.interval = setInterval(() => this.Increment(), 2000);
-// 		this.slider.querySelectorAll(".arrows").forEach((arrow) => (arrow.style.opacity = 0.2));
-// 	}
+	autoSlider() {
+		this.interval = setInterval(() => this.Increment(), 2000);
+	}
 
-// 	stopAutoSlider() {
-// 		this.slider.addEventListener("mouseenter", () => {
-// 			clearInterval(this.interval);
-// 			this.slider.querySelectorAll(".arrows").forEach((arrow) => (arrow.style.opacity = 1));
-// 		});
-// 	}
+	stopAutoSlider() {		
+		this.$slider.addEventListener("mouseenter", () => clearInterval(this.interval));
+	}
 
-// 	resumeAutoSlider() {
-// 		this.slider.addEventListener("mouseleave", this.autoSlider.bind(this));
-// 	}
-// }
+	resumeAutoSlider() {
+		this.$slider.addEventListener("mouseleave", this.autoSlider.bind(this));
+	}
+}

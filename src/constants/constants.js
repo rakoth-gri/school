@@ -6,7 +6,7 @@ export const DATA = {
 		SIDEBAR_EL: document.querySelector(".sidebar"),
 		FORM_EL: document.querySelector(".callback__form"),
 		MODAL_EL: document.querySelector(".modal"),
-		FEATURES__SLIDER_EL: document.querySelector(".features"),
+		FEATURES__SLIDER_EL: document.querySelector(".features"),		
 	},
 	MENU_LIST: [
 		{
@@ -370,7 +370,7 @@ export const DATA = {
 		},
 		{
 			title: "выбирай только интересующие тебя кейсы",
-			desc: "у нас можно #8243;прокачать#8243; свои знания по конкретной теме, заказав он-лайн консультацию",
+			desc: "у нас можно &quot;прокачать&quot; свои знания по конкретной теме, заказав он-лайн консультацию",
 		},
 		{
 			title: "получи проект в портфолио",
@@ -383,6 +383,10 @@ export const DATA = {
 		{
 			title: "вся теория изучается на практических кейсах",
 			desc: "Большую часть занятия - ты будешь писать код и выполнять конкретные задания.",
+		},
+		{
+			title: "закрепляйте материал в любое свободное время",
+			desc: "Вы получите доступ к видео-записи пройденного занятия, а также, тезисный план по изученному материалу",
 		},
 	],
 };
