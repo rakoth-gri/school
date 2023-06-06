@@ -21,10 +21,10 @@ export default class Features {
 			`<div class="slider__body">		
                 <div class="slider__body_tracker">
                     ${list
-						.map(({ title, desc }) => {
+						.map(({ title, desc }, i) => {
 							return `
                         <div class="slider__body_item">
-                            <h3> ${title} </h3>
+                            <h3> ${`${i+1} ${title}`} </h3>
                             <p> ${desc} </p>
                         </div>
                         `;
@@ -43,7 +43,7 @@ export default class Features {
 				</div>
                 <div class="features__control">
                     <i class="bi bi-arrow-right features__control_next"></i>
-                    Особенности нашего обучения
+                    следующий слайд
                 </div>
             </div>			
         </div>`

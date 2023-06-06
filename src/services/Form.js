@@ -46,7 +46,7 @@ export default class Form {
 						<div class="callback__form_block">
 							<input type="checkbox" name="checkbox" id="checkbox"/>
 							<label for="checkbox" data-style="checkbox"></label>
-							<span style="font-size: 16px;"> Согласие о предоставлении персональных данных </span>
+							<span class="agreementSpan"> Согласие о предоставлении персональных данных </span>
 						</div>					
 						<div class="callback__form_block">
 							<input type="submit" class="callback__form_el" value="Оставить заявку"/>						

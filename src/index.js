@@ -23,12 +23,18 @@ function renderHeaderMenuLinks() {
         </ul>`;
 }
 
-DATA.DOM.NAV_EL.addEventListener("click", (e) => {
+DATA.DOM.NAV_EL.addEventListener("click", function (e) {
 	if (e.target.tagName !== "A") return;
 	document.querySelectorAll(".header__nav a").forEach((link) => link.classList.remove("activeLink"));
 	e.target.classList.add("activeLink");
 	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
+	this.classList.toggle("active");
 });
+
+// **BURGER__ELEM**
+DATA.DOM.BURGER.onclick = function () {
+	DATA.DOM.NAV_EL.classList.toggle("active");
+};
 
 // **FEATURES SLIDER**
 const autoSlider = new AutoFeatures({
@@ -37,8 +43,11 @@ const autoSlider = new AutoFeatures({
 	dottes: DATA.DOM.FEATURES__DOTTES_EL,
 });
 
-window.addEventListener("resize", () => autoSlider.cssProps());
+window.addEventListener("resize", () => {
+	autoSlider.cssProps();
+});
 // **ROADMAP_SECTION**
+
 (function renderRoadmapRects() {
 	DATA.DOM.ROAD_MAP_EL.insertAdjacentHTML(
 		"beforeend",

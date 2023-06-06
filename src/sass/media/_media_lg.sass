@@ -1,0 +1,62 @@
+@media screen and (max-width: 1199.98px)
+
+    .container
+        width: 88%
+
+    .header
+        &__nav
+            padding: var(--app-md-size)
+            position: absolute
+            top: 0px
+            right: 0px
+            background-color: var(--app-brown-color)
+            z-index: 1
+            transform: translateY(-100%)
+            transition: 0.3s all linear
+
+            &.active
+                transform: translateY(0%)
+
+            &_ul
+                padding: var(--app-sm-size)
+                flex-direction: column
+                height: auto
+
+                li
+                    width: 100%
+                    text-align: center
+                    margin: var(--app-sm-size) 0
+
+                a
+                    margin: 0px
+                    font-weight: 400
+
+        &__burger
+            display: block
+
+    .slider__body
+        width: 55%  
+
+    .card__item
+        height: 400px
+
+    .sidebar__list
+        overflow-y: auto             
+
+    .roadmap__rect
+        margin: calc(2.5 * var(--app-md-size)) 0
+
+    .callback
+
+        &__form
+            width: 60%
+            padding: 1em
+
+        &__desc
+            padding: 1em
+
+    .agreementSpan
+        font-size: 0.75em
+
+    .faq
+        padding: var(--app-md-size)
