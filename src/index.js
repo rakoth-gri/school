@@ -10,7 +10,17 @@ import lazyObserver, { animeObserver } from "./services/observer.js";
 // import "./sass/index.sass"
 
 // **CHECK_THEME**
+
+// OBSERVER
+themeState.observer(() => {
+	themeState.changeStylesByTheme(themeState.currentTheme);
+	themeState.setThemeToLS(themeState.currentTheme);
+	document.querySelector(".header__theme_img").src = `./icons/${themeState.currentTheme}.svg`;
+	document.querySelector(".header__theme span").textContent = `${themeState.currentTheme}:`;
+})
+
 themeState.getThemeFromLS()
+
 
 // **RENDER MENU LINKS**
 renderHeaderMenuLinks();
@@ -110,9 +120,7 @@ function moveToHead(offset) {
 
 // **CHANGE_THEME
 document.querySelector(".header__theme_icon").addEventListener("click", function (e) {
-	themeState.changeTheme();
-	document.querySelector(".header__theme_img").src = `./icons/${themeState.currentTheme}.svg`;
-	document.querySelector(".header__theme span").textContent = `${themeState.currentTheme}:`;
+	themeState.changeTheme();	
 });
 
 // ** Faq
