@@ -9,6 +9,9 @@ import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
 
+// **CHECK_THEME**
+themeState.getThemeFromLS()
+
 // **RENDER MENU LINKS**
 renderHeaderMenuLinks();
 function renderHeaderMenuLinks() {
