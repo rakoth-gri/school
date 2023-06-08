@@ -20,7 +20,7 @@ export default class Tech_Guide {
 					({ id, tech, figcaption, ul, src }) =>
 						`<article class="card__item">
 					<div class="card__item_card1">
-						<h3 style="text-transform: uppercase">${tech}</h3>
+						<h3 style="text-transform: uppercase"> ${tech}: </h3>
 						<img src="${src}" alt="" class="card__item_logo" loading="lazy" />
 						<figcaption class="card__item_figcaption"> ${figcaption} </figcaption>
 					</div>
@@ -47,11 +47,11 @@ export default class Tech_Guide {
 
 		this.$sidebar.innerHTML = `
             <div className="sidebar__context">
-                <h2> ${tech} </h2>
+                <h2> Программа по ${tech}: </h2>
                 <i class="bi bi-box-arrow-right sidebar__icon"></i>
                 <img src="${src}" alt="${src}" class="sidebar__img"/>
                 <ul class="sidebar__list">
-                ${ul.map((li) => `<li class="sidebar__li"> ${li} </li>`).join("")}
+                	${ul.map((li) => `<li class="sidebar__li"> ${li} </li>`).join("")}
                 </ul>
                 <button class="sidebar__btn" data-tech="${tech}"> Задать вопрос </button>
             </div>            
