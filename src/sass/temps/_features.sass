@@ -13,13 +13,13 @@
         cursor: pointer
         color: var(--app-default-font)
 
+        &:hover
+            color: var(--app-blue-color)
+
         &_next
             font-size: var(--app-xl-size)
             color: var(--app-default-color)
             margin-right: var(--app-sm-size)
-
-            &:hover
-                color: var(--app-purple-color)
 
     &__dottes
         @include sectProps
@@ -59,8 +59,9 @@
         transition: all 0.35s ease
 
     &_item
-        padding: var(--app-md-size)
+        padding: var(--app-sm-size)
         letter-spacing: 0.36px
+        border-left: 0.25em solid var(--app-brown-color) 
 
         p
             font-family: inherit

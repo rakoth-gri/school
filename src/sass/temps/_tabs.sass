@@ -1,0 +1,39 @@
+.tabs
+    @include sectProps
+
+    &__panel
+        overflow-x: auto
+        display: flex
+        justify-content: center
+        padding: var(--app-sm-size)
+        &::-webkit-scrollbar
+            height: 5px
+            width: 5px
+
+        &::-webkit-scrollbar-track
+            background: var(--app-default-bg)
+
+        &::-webkit-scrollbar-thumb
+            background-color: var(--app-default-font)
+            opacity: 0.2
+
+        &_button
+            flex: none
+            padding: var(--app-sm-size)
+            padding-bottom: 0.25rem 
+            position: static
+            display: block
+            width: auto
+            text-align: center
+            margin: 0 var(--app-md-size)
+            &.active
+                border-bottom: 2px solid var(--app-brown-color)
+            a
+                font-family: "Roboto"
+                font-weight: 400
+                &:hover
+                    color: var(--app-default-font)
+
+    &__content
+        @include sectProps
+        padding: var(--app-md-size) 0

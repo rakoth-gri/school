@@ -1,13 +1,14 @@
 export const DATA = {
 	DOM: {
-		ROAD_MAP_EL: document.querySelector(".roadmap__rects"),
 		NAV_EL: document.querySelector(".header__nav"),
-		TECH_GUIDE_CARDS_EL: document.querySelector(".techGuide__cards"),
-		SIDEBAR_EL: document.querySelector(".sidebar"),
-		FORM_EL: document.querySelector(".callback__form"),
-		MODAL_EL: document.querySelector(".modal"),
+		BURGER_EL: document.querySelector(".header__burger"),
+		TABS_EL: document.querySelector(".tabs__panel"),
 		FEATURES__SLIDER_EL: document.querySelector(".features"),
-		BURGER: document.querySelector(".header__burger"),
+		TECH_GUIDE_CARDS_EL: document.querySelector(".techGuide__cards"),
+		ROAD_MAP_EL: document.querySelector(".roadmap__rects"),
+		FORM_EL: document.querySelector(".callback__form"),
+		SIDEBAR_EL: document.querySelector(".sidebar"),
+		MODAL_EL: document.querySelector(".modal"),
 	},
 	MENU_LIST: [
 		{
@@ -389,5 +390,47 @@ export const DATA = {
 			content:
 				"Безусловно, важнейший навык программиста - умение мсамостоятельно читать и разбираться в технической документации",
 		},
+	],
+	TABS_LIST: [
+		{
+			text: "FIRST BUTTON",
+			id: 0,
+			content: "FIRST BUTTON",
+		},
+		{
+			text: "SECOND BUTTON",
+			id: 1,
+			content: "SECOND BUTTON",
+		},
+		{
+			text: "THIRD BUTTON",
+			id: 2,
+			content: "THIRD BUTTON",
+		},
+		{
+			text: "FOURTH BUTTON",
+			id: 3,
+			content: "FOURTH BUTTON",
+		},
+		{
+			text: "FIVTH BUTTON",
+			id: 4,
+			content: "FIVTH BUTTON",
+		},
+		{
+			text: "SIXTH BUTTON",
+			id: 5,
+			content: "SIXTH BUTTON",
+		},
+		{
+			text: "SEVENTH BUTTON",
+			id: 6,
+			content: "SEVENTH BUTTON",
+		},
+		{
+			text: "EIGTH BUTTON",
+			id: 7,
+			content: "EIGTH BUTTON",
+		},	
 	],
 };

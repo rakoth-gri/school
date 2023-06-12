@@ -17,10 +17,9 @@ themeState.observer(() => {
 	themeState.setThemeToLS(themeState.currentTheme);
 	document.querySelector(".header__theme_img").src = `./icons/${themeState.currentTheme}.svg`;
 	document.querySelector(".header__theme span").textContent = `${themeState.currentTheme}:`;
-})
+});
 
-themeState.getThemeFromLS()
-
+themeState.getThemeFromLS();
 
 // **RENDER MENU LINKS**
 renderHeaderMenuLinks();
@@ -45,9 +44,30 @@ DATA.DOM.NAV_EL.addEventListener("click", function (e) {
 });
 
 // **BURGER__ELEM**
-DATA.DOM.BURGER.onclick = function () {
+DATA.DOM.BURGER_EL.onclick = function () {
 	DATA.DOM.NAV_EL.classList.toggle("active");
 };
+
+// **RENDER TABS_ITEMS**
+(() =>
+	DATA.DOM.TABS_EL.insertAdjacentHTML(
+		"beforeend",
+		`${DATA.TABS_LIST.map(
+			({ id, text }) => `<li class="tabs__panel_button" id="${id}"> <a> ${text} </a></li>`
+		).join("")}	`
+	))();
+
+DATA.DOM.TABS_EL.addEventListener("click", function ({ target }) {
+	if (!target.closest(".tabs__panel_button")) return;
+
+	document.querySelectorAll(".tabs__panel_button").forEach((button) => button.classList.remove("active"));
+
+	target.parentElement.classList.toggle("active");
+
+	document.querySelector(".tabs__content").innerHTML = `<p class="tabs__content_p"> ${
+		DATA.TABS_LIST[+target.parentElement.id]["content"]
+	} </p>`;
+});
 
 // **FEATURES SLIDER**
 const autoSlider = new AutoFeatures({
@@ -120,7 +140,7 @@ function moveToHead(offset) {
 
 // **CHANGE_THEME
 document.querySelector(".header__theme_icon").addEventListener("click", function (e) {
-	themeState.changeTheme();	
+	themeState.changeTheme();
 });
 
 // ** Faq
