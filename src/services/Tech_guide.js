@@ -1,43 +1,21 @@
 import { DATA } from "../constants/constants.js";
-import Form from "./Form.js";
+import Adapter from "./Adapter.js";
+
 
 export default class Tech_Guide {
 	constructor({ container, list, sidebar }) {
 		this.$container = container;
 		this.list = list;
 		this.$sidebar = sidebar;
+		this.adapter = new Adapter();
 		// METHODS:
-		this.renderTechGuideCards(this.$container, this.list);
+		this.render(this.$container, this.list);
 		this.addListenerToContainer();
 		this.addListenerToSidebar();
 	}
 
-	renderTechGuideCards(container, list) {
-		container.insertAdjacentHTML(
-			"beforeend",
-			list
-				.map(
-					({ id, tech, figcaption, ul, src }) =>
-						`<article class="card__item">
-					<div class="card__item_card1">
-						<h3 style="text-transform: uppercase"> ${tech}: </h3>
-						<img src="${src}" alt="" class="card__item_logo" loading="lazy" />
-						<figcaption class="card__item_figcaption"> ${figcaption} </figcaption>
-					</div>
-					<div class="card__item_card2">
-						<h3>В КУРСЕ:</h3>
-						<ul class="card__item_desc"> 
-                            ${ul
-								.slice(0, 3)
-								.map((li) => `<li> ${li} </li>`)
-								.join("")} 
-                        </ul>
-						<button class="card__item_btn" id="${id}"> Подробнее </button>
-					</div>
-			</article>`
-				)
-				.join("")
-		);
+	render(container, list) {
+		this.adapter.controller(this.constructor.name, container, list)
 	}
 
 	containerClickHandler = (e) => {
@@ -53,7 +31,9 @@ export default class Tech_Guide {
                 <ul class="sidebar__list">
                 	${ul.map((li) => `<li class="sidebar__li"> ${li} </li>`).join("")}
                 </ul>
-                <button class="sidebar__btn" data-tech="${tech}"> Задать вопрос </button>
+				<div class="sidebar__btn">
+					<button class="sidebar__btn_el" data-tech="${tech}"> Задать вопрос </button>
+				</div>                
             </div>            
         `;
 		this.$sidebar.classList.toggle("active");

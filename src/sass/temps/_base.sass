@@ -44,14 +44,8 @@
     --app-sm-br: 0.5rem
     --app-md-br: 0.7rem
     --app-lg-br: 1rem
-    --app-xl-br: 1.5rem
-
-body
-    color: var(--app-default-font)
-    background: var(--app-default-bg)
-    font-size: 18px
-    font-family: "Roboto"
-    position: relative
+    --app-xl-br: 1.5rem   
+    
 
     /* SCROLL STYLING Chrome/Edge/Safari */
     &::-webkit-scrollbar
@@ -64,6 +58,10 @@ body
     &::-webkit-scrollbar-thumb
         background-color: var(--app-brown-color)
         border-radius: 2px
+
+body
+    font-family: "Roboto"
+    background-color: var(--app-default-bg)        
 
 h1, h2, h3, h4, h5, h6
     text-align: center
@@ -150,7 +148,6 @@ p
 
 .container
     width: 82%
-
     margin: var(--app-xl-size) auto
     border-radius: var(--app-md-br)
     padding: var(--app-lg-size)

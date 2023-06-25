@@ -47,10 +47,13 @@
             clear: both
 
     &__btn
-        @include sectBtns
-        position: static
+        margin: var(--app-lg-size)
+        &_el
+            @include sectBtns
+            position: static
 
     &.active
         transform: scale(1)
         opacity: 1
         z-index: 4
+        background: var(--app-default-bg)

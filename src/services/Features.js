@@ -1,54 +1,27 @@
+import Adapter from "./Adapter.js";
+
 export default class Features {
-	constructor({ container, list, dottes }) {
+	constructor({ container, list}) {
 		// dom
 		this.$container = container;
 		this.$tracker = null;
 		this.$slider = null;
 		// логика:
+		this.adapter = new Adapter();
 		this.list = list;
 		this.count = 0;
 		this.interval = null;
 		this.sliderBodyWidth = null;
+		
 		// МЕТОДЫ:
-		this.renderSlides(this.$container, this.list);
+		this.render(this.$container, this.list);
 		this.cssProps(this.list);
 		this.addEventToSlider();
 	}
 
-	renderSlides(container, list) {
-		container.insertAdjacentHTML(
-			"beforeend",
-			`<div class="slider__body">		
-                <div class="slider__body_tracker">
-                    ${list
-						.map(({ title, desc }, i) => {
-							return `
-                        <div class="slider__body_item">
-                            <h3> ${`${i+1} ${title}`} </h3>
-                            <p> ${desc} </p>
-                        </div>
-                        `;
-						})
-						.join("")}
-                </div>
-				<div class="features__dottes">
-					${this.list
-						.map(
-							(_, index) =>
-								`<span class="${`features__dottes_item ${index === 0 && "active"}`}" id="${index}"> 0${
-									index + 1
-								} </span>`
-						)
-						.join("")}
-				</div>
-                <div class="features__control">
-                    <i class="bi bi-arrow-right features__control_next"></i>
-                    следующий слайд
-                </div>
-            </div>			
-        </div>`
-		);
-
+	render(container, list) {		
+		this.adapter.controller(this.constructor.name, container, list)
+		
 		this.$tracker = document.querySelector(".slider__body_tracker");
 		this.$slider = document.querySelector(".slider__body");
 	}
@@ -115,7 +88,7 @@ export default class Features {
 	}
 }
 
-// Расширение ---------------------
+// Наследование ---------------------
 export class AutoFeatures extends Features {
 	constructor(option) {
 		super(option);

@@ -9,7 +9,7 @@ import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
 
-// **CHECK_THEME**
+// **CHANGE_THEME CODE
 
 // OBSERVER
 themeState.observer(() => {
@@ -20,6 +20,12 @@ themeState.observer(() => {
 });
 
 themeState.getThemeFromLS();
+
+document.querySelector(".header__theme_icon").addEventListener("click", function (e) {
+	themeState.changeTheme();
+});
+
+
 
 // **RENDER MENU LINKS**
 renderHeaderMenuLinks();
@@ -49,13 +55,17 @@ DATA.DOM.BURGER_EL.onclick = function () {
 };
 
 // **RENDER TABS_ITEMS**
-(() =>
+(() => {
 	DATA.DOM.TABS_EL.insertAdjacentHTML(
 		"beforeend",
 		`${DATA.TABS_LIST.map(
-			({ id, text }) => `<li class="tabs__panel_button" id="${id}"> <a> ${text} </a></li>`
+			({ id, text }, i) => `<li class="${`tabs__panel_button 
+			${i === 0 ? "active" : ""}`}" id="${id}"> <a> ${text} </a></li>`
 		).join("")}	`
-	))();
+	)
+	renderTabsContent(document.querySelector(".tabs__content"), DATA.TABS_LIST[0]["content"], DATA.TABS_LIST[0]["title"])
+})();
+
 
 DATA.DOM.TABS_EL.addEventListener("click", function ({ target }) {
 	if (!target.closest(".tabs__panel_button")) return;
@@ -64,16 +74,21 @@ DATA.DOM.TABS_EL.addEventListener("click", function ({ target }) {
 
 	target.parentElement.classList.toggle("active");
 
-	document.querySelector(".tabs__content").innerHTML = `<p class="tabs__content_p"> ${
-		DATA.TABS_LIST[+target.parentElement.id]["content"]
-	} </p>`;
+	renderTabsContent(document.querySelector(".tabs__content"), DATA.TABS_LIST[+target.parentElement.id]["content"], DATA.TABS_LIST[+target.parentElement.id]["title"])
+
 });
+
+function renderTabsContent(container, content, title) {
+	container.innerHTML = `
+		<h3 class="tabs__content_h3"> ${title} </h3>	
+		<p class="tabs__content_p"> ${content} </p>
+	`
+}
 
 // **FEATURES SLIDER**
 const autoSlider = new AutoFeatures({
 	container: DATA.DOM.FEATURES__SLIDER_EL,
-	list: DATA.FEATURES_LIST,
-	dottes: DATA.DOM.FEATURES__DOTTES_EL,
+	list: DATA.FEATURES_LIST,	
 });
 
 window.addEventListener("resize", () => {
@@ -138,10 +153,6 @@ function moveToHead(offset) {
 	}
 }
 
-// **CHANGE_THEME
-document.querySelector(".header__theme_icon").addEventListener("click", function (e) {
-	themeState.changeTheme();
-});
 
 // ** Faq
 const faq = new Faq({ container: ".faq__container", array: DATA.FAQ_LIST });

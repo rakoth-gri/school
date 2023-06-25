@@ -1,38 +1,20 @@
-export default class Accordion {
+import Adapter from "./Adapter.js";
+
+export default class Faq {
 	constructor({ container, array }) {
 		this.$container = document.body.querySelector(container);
 		this.contents = null;
 		// логика ------
 		this.array = array;
+		this.adapter = new Adapter(); 
 		// методы
-		this.render(this.array);
-		this.addListenerToContainer();
+		this.render(this.$container, this.array);
+		this.addListenerToContainer();		
 	}
 
-	render(array) {
-		this.$container.insertAdjacentHTML(
-			"beforeend",
-			array
-				.map(
-					({ title, content, id }) => `
-            <article class="faq__item">
-				<div class="faq__item_header">
-					<h3>${title}</h3>
-					<i class="${`faq__item_trigger bi bi-chevron-up ${id === "0" ? "active" : ""}`}" id="${id}"></i>
-				</div>
-				<hr>
-				<div class="faq__item_content" style="${id === "0" && "max-height: max-content;"}" id="${id}">
-					<blockquote class="faq__item_body">
-						<p>
-							${content}
-						</p>								
-					</blockquote>
-				</div>
-			</article>
-        `
-				)
-				.join("")
-		);
+	render(container, list) {
+		
+		this.adapter.controller(this.constructor.name, container, list)		
 		this.contents = document.querySelectorAll(".faq__item_content");
 	}
 

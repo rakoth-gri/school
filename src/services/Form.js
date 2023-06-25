@@ -1,58 +1,24 @@
 // document.forms[0] - варики
 import { DATA } from "../constants/constants.js";
 import fetchFormData from "./fetch.js";
+import Adapter from "./Adapter.js";
 
 export default class Form {
 	constructor({ container, list, options }) {
 		this.list = list;
 		this.options = options;
 		this.$form = container;
+		this.adapter = new Adapter()
 		// LOGIC
 		this.state = { name: "", phone: "", select: "", checkbox: false };
 		// METHODS
 		this.render(this.$form, this.list, this.options);
 		this.addListenerToFormWrap();
 		this.addListenerToForm();
-	}
-
-	// showState() {
-	// 	console.log(this.state);
-	// }
+	}	
 
 	render(container, list, options) {
-		container.innerHTML = `
-			<div className="callback__form_wrap">				
-						${list
-							.map(
-								({ name, type, placeholder, pattern }) => `
-							<div class="callback__form_block">
-								<input type="${type}" placeholder="${placeholder}" name="${name}" class="callback__form_el"/>                           
-								<span class="error"></span>
-							</div>`
-							)
-							.join("")}
-						<div class="callback__form_block">                                        
-							<select name="select" class="callback__form_el" > 
-										${options
-											.map(
-												({ value, text }) =>
-													`<option value='${value}' ${value === "" && "selected"}>${text}
-													</option>`
-											)
-											.join("")}
-							</select>
-							<span class="error"></span>           
-						</div>
-						<div class="callback__form_block">
-							<input type="checkbox" name="checkbox" id="checkbox"/>
-							<label for="checkbox" data-style="checkbox"></label>
-							<span class="agreementSpan"> Согласие о предоставлении персональных данных </span>
-						</div>					
-						<div class="callback__form_block">
-							<input type="submit" class="callback__form_el" value="Оставить заявку"/>						
-						</div>
-				</div>						
-					`;
+		this.adapter.controller(this.constructor.name, container, list, options)	
 	}
 
 	changeEventHandler(e) {

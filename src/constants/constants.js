@@ -396,41 +396,49 @@ export const DATA = {
 			text: "FIRST BUTTON",
 			id: 0,
 			content: "FIRST BUTTON",
+			title: "FIRST"
 		},
 		{
 			text: "SECOND BUTTON",
 			id: 1,
 			content: "SECOND BUTTON",
+			title: "SECOND"
 		},
 		{
 			text: "THIRD BUTTON",
 			id: 2,
 			content: "THIRD BUTTON",
+			title: "THIRD"
 		},
 		{
 			text: "FOURTH BUTTON",
 			id: 3,
 			content: "FOURTH BUTTON",
+			title: "FOURTH"
 		},
 		{
 			text: "FIVTH BUTTON",
 			id: 4,
 			content: "FIVTH BUTTON",
+			title: "FIVTH"
 		},
 		{
 			text: "SIXTH BUTTON",
 			id: 5,
 			content: "SIXTH BUTTON",
+			title: "SIXTH"
 		},
 		{
 			text: "SEVENTH BUTTON",
 			id: 6,
 			content: "SEVENTH BUTTON",
+			title: "SEVENTH"
 		},
 		{
 			text: "EIGTH BUTTON",
 			id: 7,
 			content: "EIGTH BUTTON",
+			title: "EIGTH"
 		},	
 	],
 };
