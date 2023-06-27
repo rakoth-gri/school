@@ -92,7 +92,7 @@ export default class Features {
 export class AutoFeatures extends Features {
 	constructor(option) {
 		super(option);
-		this.builder();		
+		// this.builder();		
 	}
 
 	autoSlider() {

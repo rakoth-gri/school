@@ -12,7 +12,7 @@
             width: 5px   
 
         &::-webkit-scrollbar-thumb
-            background-color: var(--app-default-font)
+            background-color: var(--app-default-bg)
             opacity: 0.2
 
         &_button
@@ -28,10 +28,33 @@
                 border-bottom: 2px solid var(--app-brown-color)
             a
                 font-family: "Montserrat"                
-                font-weight: 400
+                font-weight: 500
+                letter-spacing: .5px                
+                font-size: 1.11em
                 &:hover
                     color: var(--app-default-font)
 
+                &::first-letter                    
+                    text-transform: capitalize
+                    color: var(--app-brown-color)    
     &__content
         @include sectProps
         padding: var(--app-md-size) 0
+        opacity: .05
+        transition: all 0.2s 0.25s linear
+
+        &.active
+                opacity: 1
+
+        &_p
+            text-align: justify
+            padding: var(--app-sm-size)
+            text-indent: 0.5em
+            background-color: var(--app-green-color)
+            color: var(--app-light-color)
+            border-radius: var(--app-sm-size)
+            margin: 0.5rem 0px
+            font-weight: 400
+           
+
+       

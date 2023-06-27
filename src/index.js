@@ -71,18 +71,23 @@ DATA.DOM.TABS_EL.addEventListener("click", function ({ target }) {
 	if (!target.closest(".tabs__panel_button")) return;
 
 	document.querySelectorAll(".tabs__panel_button").forEach((button) => button.classList.remove("active"));
+	document.querySelector(".tabs__content").classList.remove("active");
 
 	target.parentElement.classList.toggle("active");
 
-	renderTabsContent(document.querySelector(".tabs__content"), DATA.TABS_LIST[+target.parentElement.id]["content"], DATA.TABS_LIST[+target.parentElement.id]["title"])
+	renderTabsContent(document.querySelector(".tabs__content"), DATA.TABS_LIST[+target.parentElement.id]["content"])
+	
 
 });
 
-function renderTabsContent(container, content, title) {
-	container.innerHTML = `
-		<h3 class="tabs__content_h3"> ${title} </h3>	
-		<p class="tabs__content_p"> ${content} </p>
-	`
+function renderTabsContent(container, content ) {
+	container.innerHTML = `		
+		${
+			content instanceof Array 
+			? content.map(text => `<p class="tabs__content_p"> ${text} </p>`).join("")
+			: `<p class="tabs__content_p"> ${content} </p>`
+		}`;
+		container.classList.toggle("active");	
 }
 
 // **FEATURES SLIDER**
