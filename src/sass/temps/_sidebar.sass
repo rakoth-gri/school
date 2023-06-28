@@ -47,10 +47,12 @@
             clear: both
 
     &__btn
-        margin: 0px
-        &_el
-            @include sectBtns
-            position: static
+        @include sectBtns
+        right: var(--app-lg-size)
+        bottom: var(--app-lg-size)
+            
+            
+            
 
     &.active
         transform: scale(1)

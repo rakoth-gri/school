@@ -42,10 +42,10 @@
         padding: var(--app-md-size) 0
         opacity: .05
         transition: all 0.2s 0.25s linear
+        text-align: right        
 
         &.active
                 opacity: 1
-
         &_p
             text-align: justify
             padding: var(--app-sm-size)
@@ -55,6 +55,28 @@
             border-radius: var(--app-sm-size)
             margin: 0.5rem 0px
             font-weight: 400
+            width: 95%
+            display: inline-block
+            position: relative
+            letter-spacing: 0.45px
+
+            &::before
+                content: "--",
+                display: inline-block
+                position: absolute
+                top: 50%
+                left: -2%
+                transform: translate(-2%, -50%)
+                font-size: 1.1em
+                color: var(--app-brown-color)
+                font-weight: 500
+
+        a
+            font-family: "Montserrat"
+            color: var(--app-purple-color)
+            display: inline
+            font-weight: 500
+            
            
 
        

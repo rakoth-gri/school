@@ -30,10 +30,8 @@ export default class Tech_Guide {
                 <img src="${src}" alt="${src}" class="sidebar__img"/>
                 <ul class="sidebar__list">
                 	${ul.map((li) => `<li class="sidebar__li"> ${li} </li>`).join("")}
-                </ul>
-				<div class="sidebar__btn">
-					<button class="sidebar__btn_el" data-tech="${tech}"> Задать вопрос </button>
-				</div>                
+                </ul>				
+				<button class="sidebar__btn" data-tech="${tech}"> Задать вопрос </button>				             
             </div>            
         `;
 		this.$sidebar.classList.toggle("active");

@@ -53,9 +53,9 @@ export default class Form {
 					e.target[key].nextElementSibling.textContent = "Заполните вышестоящее поле";
 			}
 			return;
-		}		
+		}
 
-		fetchFormData("https://jsonplaceholder.typicode.com/posts", new FormData(this.$form))			
+		fetchFormData("mail/mail.php", new FormData(this.$form))			
 			.then(() => {
 				this.$form.reset();
 				this.state = { name: "", phone: "", select: "", checkbox: false }

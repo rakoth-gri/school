@@ -90,6 +90,7 @@ function renderTabsContent(container, content ) {
 		container.classList.toggle("active");	
 }
 
+
 // **FEATURES SLIDER**
 const autoSlider = new AutoFeatures({
 	container: DATA.DOM.FEATURES__SLIDER_EL,

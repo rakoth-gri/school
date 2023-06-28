@@ -2,9 +2,7 @@ export default async function fetchFormData(url, formData) {
 	try {
 		let res = await fetch(url, {
 			method: "POST",
-			headers: {
-				"Content-Type": "multipart/form-data",				
-			},
+			headers: {},			
 			body: formData,			
 		});
 
