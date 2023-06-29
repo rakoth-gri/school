@@ -3,26 +3,32 @@ import { DATA } from "../constants/constants.js";
 import fetchFormData from "./fetch.js";
 import Adapter from "./Adapter.js";
 
+function updateState(nodes) {
+	return [...nodes].slice(0, -1).reduce((acc, el) => ({...acc, [el.name]: el.name !== "checkbox" ? "" : false}), {});
+}
+
 export default class Form {
 	constructor({ container, list, options }) {
 		this.list = list;
 		this.options = options;
-		this.$form = container;
-		this.adapter = new Adapter()
+		this.$form = container;		
 		// LOGIC
-		this.state = { name: "", phone: "", select: "", checkbox: false };
+		this.adapter = new Adapter();
+		// this.state = { name: "", phone: "", textarea: "", select: "", checkbox: false };		
 		// METHODS
 		this.render(this.$form, this.list, this.options);
+		this.state = updateState(this.$form.elements)
 		this.addListenerToFormWrap();
 		this.addListenerToForm();
 	}	
 
-	render(container, list, options) {
+	render(container, list, options) {		
 		this.adapter.controller(this.constructor.name, container, list, options)	
 	}
 
 	changeEventHandler(e) {
-		if (!(e.target.tagName === "INPUT" || e.target.tagName === "SELECT")) return;
+				
+		if (!["INPUT", "SELECT", "TEXTAREA"].find(el => el === e.target.tagName)) return
 
 		if (e.target.name !== "checkbox") {
 			if (DATA.REG_EXP[e.target.name][0].test(e.target.value)) {
@@ -43,6 +49,7 @@ export default class Form {
 	}
 
 	submitEventHandler = (e) => {
+
 		e.preventDefault();		
 
 		const hasEmptyField = Object.keys(this.state).find((key) => !this.state[key]);
@@ -58,12 +65,13 @@ export default class Form {
 		fetchFormData("mail/mail.php", new FormData(this.$form))			
 			.then(() => {
 				this.$form.reset();
-				this.state = { name: "", phone: "", select: "", checkbox: false }
+				this.state = updateState(this.$form.elements)
 				DATA.DOM.MODAL_EL.classList.toggle("active");
 			})
 			.then(() => {
 				setTimeout(() => {
 					DATA.DOM.MODAL_EL.classList.toggle("active");
+					console.log(this.state);					
 				}, 1300);
 			});
 	};

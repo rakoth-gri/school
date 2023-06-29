@@ -92,11 +92,11 @@ export default class Features {
 export class AutoFeatures extends Features {
 	constructor(option) {
 		super(option);
-		// this.builder();		
+		this.builder();		
 	}
 
 	autoSlider() {
-		this.interval = setInterval(() => this.Increment(), 2000);
+		this.interval = setInterval(() => this.Increment(), 3500);
 	}
 
 	stopAutoSlider() {		

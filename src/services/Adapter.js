@@ -122,6 +122,10 @@ export default class Adapter {
                         </div>`
                         )
                         .join("")}
+					<div class="callback__form_block">
+						<textarea placeholder="Ваш запрос:" name="textarea" class="callback__form_el"/></textarea>	
+						<span class="error"></span>						
+					</div>	
                     <div class="callback__form_block">                                        
                         <select name="select" class="callback__form_el" > 
                                     ${options
@@ -133,7 +137,7 @@ export default class Adapter {
                                         .join("")}
                         </select>
                         <span class="error"></span>           
-                    </div>
+                    </div>					
                     <div class="callback__form_block">
                         <input type="checkbox" name="checkbox" id="checkbox"/>
                         <label for="checkbox" data-style="checkbox"></label>

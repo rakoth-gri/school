@@ -57,10 +57,11 @@ try {
     $mail->Subject = 'Заявка на сайте www.gri-school.ru';
     $mail->Body = "<article>
 	    <h2 style='color:blue;'> Поступила заявка на сайте www.gri-school.ru </h2>
-        <ul style='list-style-type:none;'>
+        <ul style='list-style-type:none; font-size: 1.5rem;'>
             <li> Имя: {$FORM['name']} </li>
             <li> Номер телефона: {$FORM['phone']} </li>
-            <li> Технология: {$FORM['select']} </li>
+            <li> Запрос: {$FORM['textarea']} </li>
+            <li> Технология: {$FORM['select']} </li>            
         </ul>
         </article>
         ";

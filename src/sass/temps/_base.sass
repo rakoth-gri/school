@@ -99,7 +99,7 @@ span
     font-family: inherit
     color: inherit
 
-input, select, button
+input, select, button, textarea
     color: inherit
     font-size: inherit
     font-family: inherit
@@ -107,15 +107,19 @@ input, select, button
     border: none
     background: transparent
     padding: var(--app-md-size)
+    resize: vertical
 
-input::placeholder
-    color: inherit
-    opacity: 0.63
-    transition: 0.3s all ease
+    &::placeholder
+        color: inherit
+        opacity: 0.63
+        transition: 0.3s all ease
 
-input:focus::placeholder
-    transform: scale(0.1)
-    opacity: 0.1
+    &:focus::placeholder
+        transform: scale(0.1)
+        opacity: 0.1
+
+
+   
 
 option
     color: var(--app-default-font)

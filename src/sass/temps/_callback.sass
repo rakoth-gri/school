@@ -28,11 +28,11 @@
                 right: 8%
                 background: url("../icons/required.svg") center/contain no-repeat
 
-            &:last-of-type, &:nth-of-type(4)
+            &:last-of-type, &:nth-of-type(5)
                 &::after
                     display: none
 
-            &:nth-of-type(4)
+            &:nth-of-type(5)
                 margin: var(--app-md-size) 0
         &_el
             width: 80%
@@ -80,5 +80,5 @@ label[data-style="checkbox"]
         height: 75%
         background: url("../img/done.png") center/contain no-repeat
 
-input[type="checkbox"]:checked  + label::before
+input[type="checkbox"]:checked + label::before
     display: inline-block
