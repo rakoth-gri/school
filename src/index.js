@@ -6,12 +6,12 @@ import Tech_guide from "./services/Tech_guide.js";
 import Form from "./services/Form.js";
 import { AutoFeatures } from "./services/Features.js";
 import Tabs from "./services/Tabs.js";
+import Menu from "./services/Menu.js";
 // Inter-Section observer:
 import lazyObserver, { animeObserver } from "./services/observer.js";
-
 // import "./sass/index.sass"
 
-// **CHANGE_THEME CODE
+// **CHANGE_THEME
 
 themeState.observer(() => {
 	themeState.changeStylesByTheme(themeState.currentTheme);
@@ -27,21 +27,14 @@ document.querySelector(".header__theme_icon").addEventListener("click", function
 });
 
 
-// **RENDER MENU LINKS**
-renderHeaderMenuLinks();
-function renderHeaderMenuLinks() {
-	DATA.DOM.NAV_EL.innerHTML = `
-        <ul class="header__nav_ul">
-            ${DATA.MENU_LIST.map(
-				({ href, text }, i) => `
-                <li>
-                    <a data-scroll="${href}" class="${i === 0 ? "activeLink" : ""}">${text}</a>
-                </li>`
-			).join("")}
-        </ul>`;
-}
+// **MENU_ELEM**
+const menu = new Menu({
+	container: DATA.DOM.NAV_EL,
+	list: DATA.MENU_LIST,	
+})
 
-// **RENDER TABS**
+
+// **TABS_SECTION**
 const tabs = new Tabs({
 	container: DATA.DOM.TABS_EL,
 	list: DATA.TABS_LIST,
@@ -49,21 +42,12 @@ const tabs = new Tabs({
 })
 
 
-DATA.DOM.NAV_EL.addEventListener("click", function (e) {
-	if (e.target.tagName !== "A") return;
-	document.querySelectorAll(".header__nav a").forEach((link) => link.classList.remove("activeLink"));
-	e.target.classList.add("activeLink");
-	document.querySelector(e.target.dataset.scroll).scrollIntoView({ behavior: "smooth", block: "start" });
-	this.classList.toggle("active");
-});
-
-// **BURGER__ELEM**
+// **BURGER_ELEM**
 DATA.DOM.BURGER_EL.onclick = function () {
 	DATA.DOM.NAV_EL.classList.toggle("active");
 };
 
-
-// **FEATURES SLIDER**
+// **FEATURES_SECTION**
 const autoSlider = new AutoFeatures({
 	container: DATA.DOM.FEATURES__SLIDER_EL,
 	list: DATA.FEATURES_LIST,	
@@ -72,8 +56,8 @@ const autoSlider = new AutoFeatures({
 window.addEventListener("resize", () => {
 	autoSlider.cssProps();
 });
-// **ROADMAP_SECTION**
 
+// **ROADMAP_SECTION**
 (function renderRoadmapRects() {
 	DATA.DOM.ROAD_MAP_EL.insertAdjacentHTML(
 		"beforeend",
@@ -100,7 +84,7 @@ const tech_guide = new Tech_guide({
 // **CALLBACK_SECTION**
 const form = new Form({ container: DATA.DOM.FORM_EL, list: DATA.FORM_LIST, options: DATA.OPTION_LIST });
 
-// **TOP BUTTON**
+// **TOP_BUTTON**
 document.addEventListener("scroll", () => {
 	if (document.documentElement.scrollTop > 500) {
 		document.querySelector(".top").classList.add("active");
@@ -109,7 +93,6 @@ document.addEventListener("scroll", () => {
 	}
 });
 
-// **SCROLL TO TOP** ---
 document.querySelector(".top").addEventListener("click", handleTop);
 
 function handleTop() {
@@ -131,8 +114,8 @@ function moveToHead(offset) {
 	}
 }
 
-// ** Faq
-const faq = new Faq({ container: ".faq__container", array: DATA.FAQ_LIST });
+// **FAQ_SECTION**
+const faq = new Faq({ container: DATA.DOM.FAQ_EL, list: DATA.FAQ_LIST });
 
 // ** LAZY AND ANIME OBSERVER
 document.querySelectorAll(".lazy").forEach((img) => lazyObserver.observe(img));

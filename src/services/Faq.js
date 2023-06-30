@@ -1,19 +1,18 @@
 import Adapter from "./Adapter.js";
 
 export default class Faq {
-	constructor({ container, array }) {
-		this.$container = document.body.querySelector(container);
+	constructor({ container, list }) {
+		this.$container = container;
 		this.contents = null;
 		// логика ------
-		this.array = array;
+		this.list = list;
 		this.adapter = new Adapter(); 
 		// методы
-		this.render(this.$container, this.array);
+		this.render(this.$container, this.list);
 		this.addListenerToContainer();		
 	}
 
-	render(container, list) {
-		
+	render(container, list) {		
 		this.adapter.controller(this.constructor.name, container, list)		
 		this.contents = document.querySelectorAll(".faq__item_content");
 	}

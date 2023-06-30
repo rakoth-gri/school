@@ -20,7 +20,7 @@ export const themeState = {
 		this.subscribers.forEach(cb => cb())
 	},
 	setThemeToLS(theme) {
-		return localStorage.setItem("theme", theme);
+		localStorage.setItem("theme", theme);
 	},
 	changeTheme() {
 		this.currentTheme === "light" ? (this.currentTheme = "dark") : (this.currentTheme = "light");		
