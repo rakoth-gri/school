@@ -4,13 +4,14 @@ export const DATA = {
 		BURGER_EL: document.querySelector(".header__burger"),
 		TABS_EL: document.querySelector(".tabs__panel"),
 		TABS_CONTENT_EL: document.querySelector(".tabs__content"),
-		FEATURES__SLIDER_EL: document.querySelector(".features"),
+		FEATURES_SLIDER_EL: document.querySelector(".features"),
 		TECH_GUIDE_CARDS_EL: document.querySelector(".techGuide__cards"),
 		ROAD_MAP_EL: document.querySelector(".roadmap__rects"),
 		FORM_EL: document.querySelector(".callback__form"),
 		SIDEBAR_EL: document.querySelector(".sidebar"),
 		MODAL_EL: document.querySelector(".modal"),
 		FAQ_EL: document.querySelector(".faq__container"),
+		SOCIAL_EL: document.querySelector(".footer__social"),		
 	},
 	MENU_LIST: [
 		{
@@ -28,11 +29,7 @@ export const DATA = {
 		{
 			href: "#techGuide",
 			text: "Гайд по технологиям",
-		},
-		{
-			href: "#contacts",
-			text: "Контакты",
-		},
+		},		
 		{
 			href: "#faq",
 			text: "Вопросы-ответы",
@@ -40,6 +37,10 @@ export const DATA = {
 		{
 			href: "#callback",
 			text: "Обратная связь",
+		},
+		{
+			href: "#contacts",
+			text: "Контакты",
 		},
 	],
 	FEATURES_LIST: [
@@ -436,4 +437,27 @@ export const DATA = {
 			content: ["погружение в мир IT-разработки с формированием технических компетенций на этапе средней/старшей школы", "продуктивное использование времени за ПК", "обучение основам и актуальным технологиям Web-программирования", "получение знаний для смены рода деятельности", "обретение крутого, технологичного хобби и возможность в дальнейшем <strong>самостоятельно </strong> разбираться в этом направлении"],			
 		},				
 	],
+	SOCIAL_LIST: [
+		{
+			className: "footer__social_link",
+			id: 0,
+			src: "./icons/social/telegram.svg",
+			alt: "telegram",
+			href: "https://telegram.me/umnik-rkh",			
+		},
+		{
+			className: "footer__social_link",
+			id: 1,
+			src: "./icons/social/gmail.svg",
+			alt: "gmail",
+			href: "mailto:nowhere@gmail.com",			
+		},
+		{
+			className: "footer__social_link",
+			id: 2,
+			src: "./icons/social/whatsapp.svg",
+			alt: "whatsapp",
+			href: "https://wa.me/79372222222",			
+		},
+	]
 };

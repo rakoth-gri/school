@@ -49,7 +49,7 @@ DATA.DOM.BURGER_EL.onclick = function () {
 
 // **FEATURES_SECTION**
 const autoSlider = new AutoFeatures({
-	container: DATA.DOM.FEATURES__SLIDER_EL,
+	container: DATA.DOM.FEATURES_SLIDER_EL,
 	list: DATA.FEATURES_LIST,	
 });
 
@@ -113,6 +113,20 @@ function moveToHead(offset) {
 		return true;
 	}
 }
+
+// **ROADMAP_SECTION**
+(function renderSocialIcons() {
+	DATA.DOM.SOCIAL_EL.insertAdjacentHTML(
+		"beforeend",
+		DATA.SOCIAL_LIST.map(
+			({ href, src, alt, className, id }) => `
+			<a href="${href}" class="${className}" id='${id}'> 
+				<img src="${src}" alt="${alt}" loading="lazy"> 
+			</a>
+			`
+		).join("")
+	);
+})();
 
 // **FAQ_SECTION**
 const faq = new Faq({ container: DATA.DOM.FAQ_EL, list: DATA.FAQ_LIST });

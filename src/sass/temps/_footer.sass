@@ -6,16 +6,13 @@
     overflow: hidden
     border-radius: var(--app-xl-br) var(--app-xl-br) 0 0
 
-    // &__triangular
-    //     position: absolute
-    //     top: 0
-    //     transform: translateX(-50%) rotateZ(180deg)
+    h2
+        margin: var(--app-sm-size)    
 
-    //     &:first-of-type
-    //         left: 0%
-
-    //     &:last-of-type
-    //         left: 100%
+    h3
+        text-align-last: left
+        color: var(--app-brown-color) 
+        font-weight: 500 
 
     &__flex
         display: flex
@@ -25,7 +22,25 @@
     &__block
         padding: var(--app-md-size)
         flex: 1 1 450px
-        max-width: 450px
-        height: 300px
-        border: 4px solid var(--app-danger-color)
-        margin: var(--app-md-size)
+        max-width: 450px        
+
+    &__social
+        display: flex
+        align-items: center
+        justify-content: center        
+
+        &_link
+            margin: var(--app-sm-size)    
+            width: 55px
+            height: 55px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 50%
+            &:hover
+               background-color: var(--app-blue-opacity-color)         
+
+            img                          
+                width: 70%
+                height: 70%
+                object-fit: contain
