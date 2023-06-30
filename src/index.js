@@ -5,13 +5,14 @@ import Faq from "./services/Faq.js";
 import Tech_guide from "./services/Tech_guide.js";
 import Form from "./services/Form.js";
 import { AutoFeatures } from "./services/Features.js";
+import Tabs from "./services/Tabs.js";
+// Inter-Section observer:
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
 // import "./sass/index.sass"
 
 // **CHANGE_THEME CODE
 
-// OBSERVER
 themeState.observer(() => {
 	themeState.changeStylesByTheme(themeState.currentTheme);
 	themeState.setThemeToLS(themeState.currentTheme);
@@ -24,7 +25,6 @@ themeState.getThemeFromLS();
 document.querySelector(".header__theme_icon").addEventListener("click", function (e) {
 	themeState.changeTheme();
 });
-
 
 
 // **RENDER MENU LINKS**
@@ -41,6 +41,14 @@ function renderHeaderMenuLinks() {
         </ul>`;
 }
 
+// **RENDER TABS**
+const tabs = new Tabs({
+	container: DATA.DOM.TABS_EL,
+	list: DATA.TABS_LIST,
+	contentBlock: DATA.DOM.TABS_CONTENT_EL	
+})
+
+
 DATA.DOM.NAV_EL.addEventListener("click", function (e) {
 	if (e.target.tagName !== "A") return;
 	document.querySelectorAll(".header__nav a").forEach((link) => link.classList.remove("activeLink"));
@@ -53,42 +61,6 @@ DATA.DOM.NAV_EL.addEventListener("click", function (e) {
 DATA.DOM.BURGER_EL.onclick = function () {
 	DATA.DOM.NAV_EL.classList.toggle("active");
 };
-
-// **RENDER TABS_ITEMS**
-(() => {
-	DATA.DOM.TABS_EL.insertAdjacentHTML(
-		"beforeend",
-		`${DATA.TABS_LIST.map(
-			({ id, text }, i) => `<li class="${`tabs__panel_button 
-			${i === 0 ? "active" : ""}`}" id="${id}"> <a> ${text} </a></li>`
-		).join("")}	`
-	)
-	renderTabsContent(document.querySelector(".tabs__content"), DATA.TABS_LIST[0]["content"], DATA.TABS_LIST[0]["title"])
-})();
-
-
-DATA.DOM.TABS_EL.addEventListener("click", function ({ target }) {
-	if (!target.closest(".tabs__panel_button")) return;
-
-	document.querySelectorAll(".tabs__panel_button").forEach((button) => button.classList.remove("active"));
-	document.querySelector(".tabs__content").classList.remove("active");
-
-	target.parentElement.classList.toggle("active");
-
-	renderTabsContent(document.querySelector(".tabs__content"), DATA.TABS_LIST[+target.parentElement.id]["content"])
-	
-
-});
-
-function renderTabsContent(container, content ) {
-	container.innerHTML = `		
-		${
-			content instanceof Array 
-			? content.map(text => `<p class="tabs__content_p"> ${text} </p>`).join("")
-			: `<p class="tabs__content_p"> ${content} </p>`
-		}`;
-		container.classList.toggle("active");	
-}
 
 
 // **FEATURES SLIDER**
@@ -158,7 +130,6 @@ function moveToHead(offset) {
 		return true;
 	}
 }
-
 
 // ** Faq
 const faq = new Faq({ container: ".faq__container", array: DATA.FAQ_LIST });

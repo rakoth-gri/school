@@ -14,12 +14,24 @@ export default class Adapter {
 				break;
 			case "Tech_Guide":
 				this[method](container, list)				
-				break;					
+				break;
+			case "Tabs":
+				this[method](container, list)				
+				break;				
 			default:
 				this[method](container, list, options)
 				break;
 		}
     };
+
+	Tabs (container, list) {     
+	container.insertAdjacentHTML(
+		"beforeend",
+		`${list.map(
+			({ id, text }, i) => `<li class="${`tabs__panel_button 
+			${i === 0 ? "active" : ""}`}" id="${id}"> <a> ${text} </a></li>`
+		).join("")}	`
+	)}
 
     Faq(container, list) {               
         container.insertAdjacentHTML(

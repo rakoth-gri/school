@@ -6,6 +6,7 @@
         display: flex
         justify-content: flex-start
         padding: var(--app-sm-size) var(--app-sm-size) 0px var(--app-sm-size)
+        position: relative
         
         &::-webkit-scrollbar
             height: 5px
@@ -14,6 +15,19 @@
         &::-webkit-scrollbar-thumb
             background-color: var(--app-default-bg)
             opacity: 0.2
+
+        &::before
+            content: ''
+            display: inline-block
+            background-image: url("../icons/swipe.svg")
+            background-position: center 
+            width: 32px
+            position: absolute
+            height: 32px
+            top: 60%
+            left: 0%
+            transform: translate(0, -50%)
+            z-index: 2   
 
         &_button
             flex: none
@@ -70,6 +84,9 @@
                 font-size: 1.1em
                 color: var(--app-brown-color)
                 font-weight: 500
+
+            &::first-letter
+                text-transform: uppercase    
 
         a
             font-family: "Montserrat"

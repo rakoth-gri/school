@@ -49,11 +49,21 @@
         &__image
             width: 95%
 
-    .tabs__content_p
-        &::before               
-            left: -7.3%
-            transform: translate(2.7%, -50%)
-            font-weight: 700               
+    .tabs
+
+        &__panel
+            &::before
+                width: 27px           
+                height: 27px
+
+            &_button
+                margin: 0.55rem                   
+
+        &__content_p
+            &::before               
+                left: -7.3%
+                transform: translate(2.7%, -50%)
+                font-weight: 700               
                 
 
     .slider__body
@@ -144,6 +154,10 @@
             &_header
                 h3
                     width: 90%
+
+            &_body p
+                padding: 0
+
 
     .modal
         width: 75%
