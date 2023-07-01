@@ -9,10 +9,11 @@ import Tabs from "./services/Tabs.js";
 import Menu from "./services/Menu.js";
 // Inter-Section observer:
 import lazyObserver, { animeObserver } from "./services/observer.js";
+
 // import "./sass/index.sass"
 
-// **CHANGE_THEME
 
+// **CHANGE_THEME
 themeState.observer(() => {
 	themeState.changeStylesByTheme(themeState.currentTheme);
 	themeState.setThemeToLS(themeState.currentTheme);

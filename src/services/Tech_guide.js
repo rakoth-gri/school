@@ -29,7 +29,7 @@ export default class Tech_Guide {
                 <i class="bi bi-box-arrow-right sidebar__icon"></i>
                 <img src="${src}" alt="${src}" class="sidebar__img"/>
                 <ul class="sidebar__list">
-                	${ul.map((li) => `<li class="sidebar__li"> ${li} </li>`).join("")}
+                	${ul.map((li,i,arr) => `<li class="sidebar__li">${li}${i < arr.length - 1 ? ";" : "."}</li>`).join("")}
                 </ul>				
 				<button class="sidebar__btn" data-tech="${tech}"> Задать вопрос </button>				             
             </div>            

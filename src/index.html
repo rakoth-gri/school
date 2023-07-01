@@ -1,170 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>занятия по web-программированию</title>
-		<link rel="icon" href="./icons/logo.svg" type="image/svg+xml" />
-		<link rel="stylesheet" href="./css/index.min.css" />
-		<script src="./index.js" type="module" defer></script>
-	</head>
-	<body>
-		<div class="sidebar">
-			<!-- DYNAMIC RENDER  -->
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>занятия по web-программированию</title>
+    <link rel="icon" href="./icons/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/index.min.css" />
+    <script src="./index.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <!-- DYNAMIC RENDER  -->
+    </div>
 
-		<section class="modal">
-			<h2>Спасибо что обратились!</h2>
-			<p> Мы обязательно ответим на Ваш запрос </p>
-		</section>
+    <section class="modal">
+      <h2>Спасибо что обратились!</h2>
+      <p>Мы обязательно ответим на Ваш запрос</p>
+    </section>
 
-		<header class="header">
-			<a href="index.html" title="НА ГЛАВНУЮ" class="anchorLogo">
-				<div class="header__logo">GRI-Camp</div>
-			</a>
+    <header class="header">
+      <a href="index.html" title="НА ГЛАВНУЮ" class="anchorLogo">
+        <div class="header__logo">GRI-Camp</div>
+      </a>
 
-			<div class="header__theme">
-				<i class="bi bi-hand-index-fill header__theme_icon"></i>
-				<span>light: </span>
-				<img src="./icons/light.svg" alt="theme" class="header__theme_img" loading="lazy" />
-			</div>
+      <div class="header__theme">
+        <i class="bi bi-hand-index-fill header__theme_icon"></i>
+        <span>light: </span>
+        <img
+          src="./icons/light.svg"
+          alt="theme"
+          class="header__theme_img"
+          loading="lazy"
+        />
+      </div>
 
-			<!-- **MICRO-DATA-BLOCK** -->
-			<div class="contacts" itemscope itemtype="http://schema.org/Organization">
-				<a target="_blank" href="tel:+70001234567">
-					<span itemprop="telephone" class="contacts_tel"> +7 000 123 45 67 </span>
-				</a>
-				<a target="_blank" href="mailto:nowhere@gmail.com">
-					<span itemprop="email" class="contacts_mail"> nowhere@gmail.com </span>
-				</a>
-			</div>
+      <!-- **MICRO-DATA-BLOCK** -->
+      <div class="contacts" itemscope itemtype="http://schema.org/Organization">
+        <a target="_blank" href="tel:+70001234567">
+          <span itemprop="telephone" class="contacts_tel">
+            +7 000 123 45 67
+          </span>
+        </a>
+        <a target="_blank" href="mailto:nowhere@gmail.com">
+          <span itemprop="email" class="contacts_mail">
+            nowhere@gmail.com
+          </span>
+        </a>
+      </div>
 
-			<nav class="header__nav">
-				<!-- DYNAMIC RENDER  -->
-			</nav>
+      <nav class="header__nav">
+        <!-- DYNAMIC RENDER  -->
+      </nav>
 
-			<div class="header__burger">
-				<img src="./icons/burger.svg" alt="burger" loading="lazy" class="header__burger_img" />
-			</div>
-		</header>
+      <div class="header__burger">
+        <img
+          src="./icons/burger.svg"
+          alt="burger"
+          loading="lazy"
+          class="header__burger_img"
+        />
+      </div>
+    </header>
 
-		<main class="container">
-			
-			<section class="introduction" id="introduction">
-				<div class="introduction__h1">
-					<h1>
-						<em class="introduction__h1_brand"> GRI-Camp </em> <br />
-						<span style="color: var(--app-blue-color)"> Web-программирование </span>
-						для взрослых и детей.
-					</h1>
-					<span class="introduction__h1_desc">
-						Индивидуальные и групповые занятия по Web-программированию, консультации и менторство.
-					</span>
-				</div>
-				<div class="introduction__image">
-					<picture class="introduction__image_poster">
-						<source srcset="./img/thumb/poster_min.jpg" media="(max-width: 991.99px)" />
-						<img src="./img/poster-ellipse.png" alt="poster" loading="lazy" />
-					</picture>
-				</div>
-			</section>
+    <div class="timer"></div>
 
-			<section class="tabs">
-				<h2><span style="color: var(--app-blue-color)"> Информационная </span>  доска </h2>
-				<ul class="tabs__panel">
-					<!-- DYNAMIC RENDER  -->
-				</ul>
-				<div class="tabs__content">
-					<!-- DYNAMIC RENDER  -->
-				</div>
-			</section>
+    <main class="container">
+      <section class="introduction" id="introduction">
+        <div class="introduction__h1">
+          <h1>
+            <em class="introduction__h1_brand"> GRI-Camp </em> <br />
+            <span style="color: var(--app-blue-color)">
+              Web-программирование
+            </span>
+            для взрослых и детей.
+          </h1>
+          <span class="introduction__h1_desc">
+            Индивидуальные и групповые занятия по Web-программированию,
+            консультации и менторство.
+          </span>
+        </div>
+        <div class="introduction__image">
+          <picture class="introduction__image_poster">
+            <source
+              srcset="./img/thumb/poster_min.jpg"
+              media="(max-width: 991.99px)"
+            />
+            <img src="./img/poster-ellipse.png" alt="poster" loading="lazy" />
+          </picture>
+        </div>
+      </section>
 
-			<section class="features" id="features">
-				<h2><span style="color: var(--app-blue-color)"> Особенности </span> обучения</h2>
-				<!-- DYNAMIC RENDER  -->
-			</section>
+      <section class="tabs">
+        <h2>
+          <span style="color: var(--app-blue-color)"> Информационная </span>
+          доска
+        </h2>
+        <ul class="tabs__panel">
+          <!-- DYNAMIC RENDER  -->
+        </ul>
+        <div class="tabs__content">
+          <!-- DYNAMIC RENDER  -->
+        </div>
+      </section>
 
-			<section class="techGuide" id="techGuide">
-				<!-- DYNAMIC RENDER  -->
-				<h2><span style="color: var(--app-blue-color)"> Шорт гайд </span> по технологиям</h2>
-				<div class="techGuide__cards"><!-- DYNAMIC RENDER  --></div>
-			</section>
+      <section class="features" id="features">
+        <h2>
+          <span style="color: var(--app-blue-color)"> Особенности </span>
+          обучения
+        </h2>
+        <!-- DYNAMIC RENDER  -->
+      </section>
 
-			<section class="roadmap" id="roadmap">
-				<h2>Карта обучения</h2>
-				<div class="roadmap__line"></div>
-				<div class="roadmap__rects">
-					<!-- DYNAMIC RENDER  -->
-				</div>
-			</section>
-		</main>
+      <section class="techGuide" id="techGuide">
+        <!-- DYNAMIC RENDER  -->
+        <h2>
+          <span style="color: var(--app-blue-color)"> Шорт гайд </span> по
+          технологиям
+        </h2>
+        <div class="techGuide__cards"><!-- DYNAMIC RENDER  --></div>
+      </section>
 
-		<section class="callback" id="callback">
-			<h2>Закажите обратный звонок</h2>
-			<div class="callback__flex">
-				<form class="callback__form">
-					<!-- DYNAMIC RENDER  -->
-				</form>
-				<article class="callback__desc">
-					<p>
-						Чтобы правильно сделать выбор, пройдите бесплатный пробный урок по интересующей теме. Вы
-						поработаете с наставником, получите новые знания и самостоятельно ответите на вопрос: подходит
-						Вам конкретный курс или нет.
-					</p>
-					<p>Для записи на пробный урок - введите данные в форму обратной связи или просто напишите нам.</p>
-				</article>
-			</div>
-		</section>
+      <section class="roadmap" id="roadmap">
+        <h2>Карта обучения</h2>
+        <div class="roadmap__line"></div>
+        <div class="roadmap__rects">
+          <!-- DYNAMIC RENDER  -->
+        </div>
+      </section>
+    </main>
 
-		<section class="container">
-			<div class="faq" id="faq">
-				<h2>Часто задаваемые вопросы</h2>
-				<div class="faq__container">
-					<!-- DYNAMIC RENDER  -->
-				</div>
-			</div>
-		</section>
+    <section class="callback" id="callback">
+      <h2>Закажите обратный звонок</h2>
+      <div class="callback__flex">
+        <form class="callback__form">
+          <!-- DYNAMIC RENDER  -->
+        </form>
+        <article class="callback__desc">
+          <p>
+            Чтобы правильно сделать выбор, пройдите бесплатный пробный урок по
+            интересующей теме. Вы поработаете с наставником, получите новые
+            знания и самостоятельно ответите на вопрос: подходит Вам конкретный
+            курс или нет.
+          </p>
+          <p>
+            Для записи на пробный урок - введите данные в форму обратной связи
+            или просто напишите нам.
+          </p>
+        </article>
+      </div>
+    </section>
 
-		<footer class="footer" id="contacts">
-			<h2>Контакты</h2>
-			<div class="footer__flex">
-				<div class="footer__block">
-					<h3 style="text-align: left;"> Вы можете связаться с нами: </h3>
-					<div class="contacts" itemscope itemtype="http://schema.org/Organization">
-						<a target="_blank" href="tel:+70001234567">
-							<span itemprop="telephone" class="contacts_tel"> +7 000 123 45 67 </span>
-						</a>
-						<a target="_blank" href="mailto:nowhere@gmail.com">
-							<span itemprop="email" class="contacts_mail"> nowhere@gmail.com </span>
-						</a>
-					</div>
-					<h3 style="text-align: left;"> Напишите нам: </h3>
-					<section class="footer__social">
-						<!-- DYNAMIC RENDER  -->
-					</section>
-				</div>
-				
-				<div class="footer__block">
-					<h3 style="text-align: left;"> Вы можете связаться с нами: </h3>
-					<div class="contacts" itemscope itemtype="http://schema.org/Organization">
-						<a target="_blank" href="tel:+70001234567">
-							<span itemprop="telephone" class="contacts_tel"> +7 000 123 45 67 </span>
-						</a>
-						<a target="_blank" href="mailto:nowhere@gmail.com">
-							<span itemprop="email" class="contacts_mail"> nowhere@gmail.com </span>
-						</a>
-					</div>
-					<h3 style="text-align: left;"> Напишите нам: </h3>
-					<section class="footer__social">
-						<!-- DYNAMIC RENDER  -->
-					</section>
-				</div>		
-			</div>
-		</footer>
+    <section class="container">
+      <div class="faq" id="faq">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq__container">
+          <!-- DYNAMIC RENDER  -->
+        </div>
+      </div>
+    </section>
 
-		<div class="top">
-			<img src="./icons/top.svg" alt="top" class="top__img" />
-		</div>
-	</body>
+    <footer class="footer" id="contacts">
+      <h2>Контакты</h2>
+      <div class="footer__flex">
+        <div class="footer__block">
+          <h3 style="text-align: left">Вы можете связаться с нами:</h3>
+          <div
+            class="contacts"
+            itemscope
+            itemtype="http://schema.org/Organization"
+          >
+            <a target="_blank" href="tel:+70001234567">
+              <span itemprop="telephone" class="contacts_tel">
+                +7 000 123 45 67
+              </span>
+            </a>
+            <a target="_blank" href="mailto:nowhere@gmail.com">
+              <span itemprop="email" class="contacts_mail">
+                nowhere@gmail.com
+              </span>
+            </a>
+          </div>
+          <h3 style="text-align: left">Напишите нам:</h3>
+          <section class="footer__social">
+            <!-- DYNAMIC RENDER  -->
+          </section>
+        </div>
+
+        <div class="footer__block">
+          <h3 style="text-align: left">Вы можете связаться с нами:</h3>
+          <div
+            class="contacts"
+            itemscope
+            itemtype="http://schema.org/Organization"
+          >
+            <a target="_blank" href="tel:+70001234567">
+              <span itemprop="telephone" class="contacts_tel">
+                +7 000 123 45 67
+              </span>
+            </a>
+            <a target="_blank" href="mailto:nowhere@gmail.com">
+              <span itemprop="email" class="contacts_mail">
+                nowhere@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="top">
+      <img src="./icons/top.svg" alt="top" class="top__img" />
+    </div>
+  </body>
 </html>

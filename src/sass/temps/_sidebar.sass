@@ -13,6 +13,9 @@
     box-shadow: 2px 2px 14px #d99c9c
     overflow-y: auto
 
+    h2
+        margin: var(--app-md-size) 0
+
     &__context
         position: relative
 
@@ -33,23 +36,28 @@
         padding: 0px var(--app-lg-size)
         opacity: .78
 
+    &__list
+        list-style-type: disc    
+
     &__li
         line-height: 1.5em
         font-weight: 300
         letter-spacing: 0.4px
         text-shadow: 2px 2px 9px var(--app-default-bg)
         margin: 0.5rem
+        
+        &::marker
+            margin-right: 0.25rem!important
 
-        &:last-child:after
-            content: ""
-            margin: var(--app-lg-size)
-            display: block
+        &:last-child::after
+            content: '',            
             clear: both
 
     &__btn
         @include sectBtns
-        right: var(--app-lg-size)
-        bottom: var(--app-lg-size)
+        position: static
+        // right: var(--app-lg-size)
+        // bottom: var(--app-lg-size)
             
             
             
