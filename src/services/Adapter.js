@@ -7,9 +7,7 @@ export default class Adapter {
 			case "Faq":
 				this[method](container, list)				
 				break;
-			case "Features":
-                console.log("Здесь");
-                
+			case "Features":               
 				this[method](container, list)				
 				break;
 			case "Tech_Guide":
@@ -42,15 +40,15 @@ export default class Adapter {
 			list
 				.map(
 					({ title, content, id }) => `
-            <article class="faq__item" itemscope itemtype="http://schema.org/Question>
+            <article class="faq__item">
 				<div class="faq__item_header">
-					<h3 itemprop="name">${title}</h3>
+					<h3>${title}</h3>
 					<i class="${`faq__item_trigger bi bi-chevron-up ${id === "0" ? "active" : ""}`}" id="${id}"></i>
 				</div>
 				<hr>
 				<div class="faq__item_content" style="${id === "0" && "max-height: max-content;"}" id="${id}">
 					<blockquote class="faq__item_body">
-						<p itemprop="text">
+						<p>
 							${content}
 						</p>								
 					</blockquote>
