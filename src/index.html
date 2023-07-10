@@ -170,13 +170,15 @@
     <footer class="footer" id="contacts">
       <h2>Контакты</h2>
       <div class="footer__flex">
-        <address class="footer__block">
+        <div class="footer__block">
           <h3 style="text-align: left">Вы можете связаться с нами:</h3>
-          <div
+          <!-- **MICRO-DATA-BLOCK** -->
+          <address
             class="contacts"
             itemscope
             itemtype="http://schema.org/Organization"
           >
+            <span itemprop="name" class="contacts"> Web-программирование для взрослых и детей. </span>   
             <a target="_blank" href="tel:+70001234567">
               <span itemprop="telephone" class="contacts_tel">
                 +7 000 123 45 67
@@ -187,31 +189,19 @@
                 nowhere@gmail.com
               </span>
             </a>
-          </div>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">               
+              <span itemprop="addressLocality" class="contacts">Татарстан, Россия</span>
+            </div>
+          </address>
           <h3 style="text-align: left">Напишите нам:</h3>
           <section class="footer__social">
             <!-- DYNAMIC RENDER  -->
           </section>
-        </address>
-
-        <!-- **MICRO-DATA-BLOCK** -->
-        <address  class="contacts" itemscope itemtype="http://schema.org/Organization">
-          <span itemprop="name" class="hidden"> GRI_CAMP </span>
-          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="hidden">               
-            <span itemprop="addressLocality">Татарстан, Россия</span>
-          </div>
-          <a target="_blank" href="tel:+70001234567">
-            <span itemprop="telephone" class="contacts_tel">
-              +7 000 123 45 67
-            </span>
-          </a>
-          <a target="_blank" href="mailto:nowhere@gmail.com">
-            <span itemprop="email" class="contacts_mail">
-              nowhere@gmail.com
-            </span>
-          </a>
-        </address>
         </div>
+
+        <address class="footer__block">          
+          SOMETHING TO FILL
+        </address>        
       </div>
     </footer>
 
