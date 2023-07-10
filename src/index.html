@@ -39,19 +39,18 @@
         />
       </div>
 
-      <!-- **MICRO-DATA-BLOCK** -->
-      <div class="contacts" itemscope itemtype="http://schema.org/Organization">
+      <address class="contacts">        
         <a target="_blank" href="tel:+70001234567">
-          <span itemprop="telephone" class="contacts_tel">
+          <span class="contacts_tel">
             +7 000 123 45 67
           </span>
         </a>
         <a target="_blank" href="mailto:nowhere@gmail.com">
-          <span itemprop="email" class="contacts_mail">
+          <span class="contacts_mail">
             nowhere@gmail.com
           </span>
         </a>
-      </div>
+      </address>
 
       <nav class="header__nav">
         <!-- DYNAMIC RENDER  -->
@@ -171,7 +170,7 @@
     <footer class="footer" id="contacts">
       <h2>Контакты</h2>
       <div class="footer__flex">
-        <div class="footer__block">
+        <address class="footer__block">
           <h3 style="text-align: left">Вы можете связаться с нами:</h3>
           <div
             class="contacts"
@@ -193,26 +192,25 @@
           <section class="footer__social">
             <!-- DYNAMIC RENDER  -->
           </section>
-        </div>
+        </address>
 
-        <div class="footer__block">
-          <h3 style="text-align: left">Вы можете связаться с нами:</h3>
-          <div
-            class="contacts"
-            itemscope
-            itemtype="http://schema.org/Organization"
-          >
-            <a target="_blank" href="tel:+70001234567">
-              <span itemprop="telephone" class="contacts_tel">
-                +7 000 123 45 67
-              </span>
-            </a>
-            <a target="_blank" href="mailto:nowhere@gmail.com">
-              <span itemprop="email" class="contacts_mail">
-                nowhere@gmail.com
-              </span>
-            </a>
+        <!-- **MICRO-DATA-BLOCK** -->
+        <address  class="contacts" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name" class="hidden"> GRI_CAMP </span>
+          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="hidden">               
+            <span itemprop="addressLocality">Татарстан, Россия</span>
           </div>
+          <a target="_blank" href="tel:+70001234567">
+            <span itemprop="telephone" class="contacts_tel">
+              +7 000 123 45 67
+            </span>
+          </a>
+          <a target="_blank" href="mailto:nowhere@gmail.com">
+            <span itemprop="email" class="contacts_mail">
+              nowhere@gmail.com
+            </span>
+          </a>
+        </address>
         </div>
       </div>
     </footer>

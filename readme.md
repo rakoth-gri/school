@@ -91,6 +91,7 @@ export default class Tech_Guide {
 -   В качестве сборщика проекта - будем юзать **WEBPACK-5**
 -   для контроля версий и back-up исходников - будем пользоваться **GIT**, **GITHUB**,
 -   Возможно типизируем проект с TS
+-   Для микроразметки - воспользуемся готовыми шаблонами [ARTZOLIN](https://artzolin.ru/articles/schema-snippets/#html-organization)
 -   После сборки проекта (WP) - протестировать ресурс перед выгрузкой на хостинг:
     1. HTML VALIDATORS
     2. [GOOGLE PAGE SPEED](https://pagespeed.web.dev/) (на предмет оптимизации статики и получения примерного индекса загрузки)
