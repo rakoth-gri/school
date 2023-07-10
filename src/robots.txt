@@ -3,4 +3,4 @@ Allow: /
 Allow: /*
 Allow: /*.css
 Allow: /*.js
-Sitemap: https://www.gricamp.ru/sitemap.xml
+Sitemap: https://rakoth-gri.github.io/sitemap.xml
