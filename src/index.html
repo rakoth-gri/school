@@ -70,16 +70,17 @@
     <div class="timer"></div>
 
     <main class="container">
-      <section class="introduction" id="introduction">
+      <!-- **MICRO-DATA-SECTION** -->
+      <section class="introduction" id="introduction" itemscope itemtype="https://schema.org/Product">
         <div class="introduction__h1">
           <h1>
             <em class="introduction__h1_brand"> GRI-Camp </em> <br />
-            <span style="color: var(--app-blue-color)">
+            <span style="color: var(--app-blue-color)" itemprop="name">
               Web-программирование
             </span>
             для взрослых и детей.
           </h1>
-          <span class="introduction__h1_desc">
+          <span class="introduction__h1_desc" itemprop="description">
             Индивидуальные занятия по Web-программированию,
             консультации и менторство.
           </span>
@@ -90,8 +91,13 @@
               srcset="./img/thumb/poster_min.jpg"
               media="(max-width: 991.99px)"
             />
-            <img src="./img/poster-ellipse.png" alt="poster" loading="lazy" />
+            <img src="./img/poster-ellipse.png" alt="poster" loading="lazy" itemprop="image"/>
           </picture>
+        </div>
+        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">          
+          <meta itemprop="price" content="1000.00">          
+          <meta itemprop="priceCurrency" content="RUB">          
+          <link itemprop="availability" href="http://schema.org/InStock">
         </div>
       </section>
 
