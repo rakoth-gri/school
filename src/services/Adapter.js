@@ -88,7 +88,7 @@ export default class Adapter {
 				</div>
                 <div class="features__control">
                     <i class="bi bi-arrow-right features__control_next"></i>
-                    следующий слайд
+                    next
                 </div>
             </div>`
 		);
