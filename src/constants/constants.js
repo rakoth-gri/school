@@ -11,7 +11,8 @@ export const DATA = {
 		SIDEBAR_EL: document.querySelector(".sidebar"),
 		MODAL_EL: document.querySelector(".modal"),
 		FAQ_EL: document.querySelector(".faq__container"),
-		SOCIAL_EL: document.querySelector(".footer__social"),		
+		SOCIAL_EL: document.querySelector(".footer__social"),
+		AGREEMENT_EL: document.querySelector(".agreement"),		
 	},
 	MENU_LIST: [
 		{

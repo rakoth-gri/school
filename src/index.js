@@ -7,6 +7,7 @@ import Form from "./services/Form.js";
 import { AutoFeatures } from "./services/Features.js";
 import Tabs from "./services/Tabs.js";
 import Menu from "./services/Menu.js";
+import Agreement from "./services/Agreement.js";
 // Inter-Section observer:
 import lazyObserver, { animeObserver } from "./services/observer.js";
 
@@ -132,6 +133,11 @@ function moveToHead(offset) {
 // **FAQ_SECTION**
 const faq = new Faq({ container: DATA.DOM.FAQ_EL, list: DATA.FAQ_LIST });
 
+// **AGREEMENT_SECTION**
+const agreement = new Agreement({ container: DATA.DOM.AGREEMENT_EL})
+
 // ** LAZY AND ANIME OBSERVER
 document.querySelectorAll(".lazy").forEach((img) => lazyObserver.observe(img));
 document.querySelectorAll(".roadmap__rect").forEach((rect) => animeObserver.observe(rect));
+
+
