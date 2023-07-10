@@ -180,29 +180,36 @@ p
 
 // Contacts for Header, Footer 
 .contacts
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    justify-content: flex-start
+
+    span, &__address
+        margin: 0.5rem
+        font-style: normal    
+
+    &_tel, &_mail
+        letter-spacing: 0.4px
         display: flex
-        align-items: flex-start
-        flex-direction: column
-        justify-content: flex-start
+        align-items: center
+        font-family: "Gotham"
+        font-weight: 500
 
-        &_tel, &_mail
-            letter-spacing: 0.4px
-            display: flex
-            align-items: center
-            font-family: "Gotham"
-            font-weight: 500
+        &::before
+            @include svgIcon
+            width: 32px
+            height: 32px
+            margin-right: 0.5rem
 
-            &::before
-                @include svgIcon
-                width: 32px
-                height: 32px
-                margin-right: 0.5rem
+    &_tel::before
+        background: url("../icons/phone.svg") center/contain no-repeat
 
-        &_tel::before
-            background: url("../icons/phone.svg") center/contain no-repeat
+    &_mail::before
+        background: url("../icons/mail.svg") center/contain no-repeat
 
-        &_mail::before
-            background: url("../icons/mail.svg") center/contain no-repeat
+    
+            
                
 .offer
     transform: scale(0)               
