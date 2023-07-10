@@ -7,8 +7,7 @@ export default class Agreement {
         this.adapter = new Adapter();
         this.render(container)
         this.addListenerToContainer();
-        this.addListenerToTrigger();
-        console.log(this.$trigger, this.$container);        
+        this.addListenerToTrigger();       
     }
 
     render(container) {        
