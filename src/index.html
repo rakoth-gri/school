@@ -69,18 +69,15 @@
     <main class="container">
       <!-- **MICRO-DATA-SECTION** -->
       <section class="introduction" id="introduction" itemscope itemtype="https://schema.org/Product">
-        <div class="introduction__h1">
-          <meta itemprop="name" content="Web-программирование для взрослых и детей." />
-          <meta itemprop="description" content="Индивидуальные занятия по Web-программированию,
-          консультации и менторство." />
-          <h1>
+        <div class="introduction__h1">          
+          <h1 itemprop="name">
             <em class="introduction__h1_brand"> GRI-Camp </em> <br />
             <span style="color: var(--app-blue-color)">
               Web-программирование
             </span>
             для взрослых и детей.
           </h1>
-          <span class="introduction__h1_desc">
+          <span class="introduction__h1_desc" itemprop="description">
             Индивидуальные занятия по Web-программированию,
             консультации и менторство.
           </span>
@@ -94,16 +91,9 @@
             <img src="./img/poster-ellipse.png" alt="poster" loading="lazy" itemprop="image"/>
           </picture>
         </div>
-        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <link itemprop="url" href="https://gri-web.ru" />
-          <meta itemprop="availability" content="https://schema.org/InStock" />
-          <meta itemprop="priceCurrency" content="RUB" />
-          <meta itemprop="itemCondition" content="https://schema.org/NewCondition" />
-          <meta itemprop="price" content="800" />
-          <meta itemprop="priceValidUntil" content="2023-12-31" />
-          <div itemprop="seller" itemtype="http://schema.org/Organization" itemscope>
-            <meta itemprop="name" content="репетиторский центр: gri-web.ru" />
-          </div>          
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="offer">          
+          <span itemprop="price">800</span>
+          <span itemprop="priceCurrency">RUB</span>     
         </div>
       </section>
 
@@ -187,7 +177,7 @@
             itemscope
             itemtype="http://schema.org/Organization"
           >
-            <span itemprop="name" class="contacts"> Web-программирование для взрослых и детей. </span>   
+            <span itemprop="name" class="contacts"> Репетиторский центр: GRI-CAMP </span>   
             <a target="_blank" href="tel:+70001234567">
               <span itemprop="telephone" class="contacts_tel">
                 +7 000 123 45 67
@@ -198,8 +188,9 @@
                 nowhere@gmail.com
               </span>
             </a>
-            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">               
-              <span itemprop="addressLocality" class="contacts">Татарстан, Россия</span>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              Адрес:               
+              <span class="contacts">Казань, Россия</span>
             </div>
           </address>
           <h3 style="text-align: left">Напишите нам:</h3>

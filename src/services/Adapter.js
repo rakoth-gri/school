@@ -42,15 +42,15 @@ export default class Adapter {
 			list
 				.map(
 					({ title, content, id }) => `
-            <article class="faq__item">
+            <article class="faq__item" itemscope itemtype="http://schema.org/Question>
 				<div class="faq__item_header">
-					<h3>${title}</h3>
+					<h3 itemprop="name">${title}</h3>
 					<i class="${`faq__item_trigger bi bi-chevron-up ${id === "0" ? "active" : ""}`}" id="${id}"></i>
 				</div>
 				<hr>
 				<div class="faq__item_content" style="${id === "0" && "max-height: max-content;"}" id="${id}">
 					<blockquote class="faq__item_body">
-						<p>
+						<p itemprop="text">
 							${content}
 						</p>								
 					</blockquote>
