@@ -20,8 +20,7 @@ export default class Features {
 	}
 
 	render(container, list) {		
-		this.adapter.controller(this.constructor.name, container, list)
-		
+		this.adapter.controller(this.constructor.name, container, list)		
 		this.$tracker = document.querySelector(".slider__body_tracker");
 		this.$slider = document.querySelector(".slider__body");
 	}
@@ -42,7 +41,7 @@ export default class Features {
 				this.Increment();
 				break;
 			default:
-				this.count = +e.target.id;
+				this.count = +e.target.dataset.id;
 				this.checkCount(this.count);
 				break;
 		}

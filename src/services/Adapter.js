@@ -80,7 +80,7 @@ export default class Adapter {
 					${list
 						.map(
 							(_, index) =>
-								`<span class="${`features__dottes_item ${index === 0 && "active"}`}" id="${index}"> 0${
+								`<span class="${`features__dottes_item ${index === 0 && "active"}`}" data-id="${index}"> 0${
 									index + 1
 								} </span>`
 						)
