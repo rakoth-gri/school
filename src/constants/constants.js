@@ -465,22 +465,19 @@ export const DATA = {
 	],
 	SOCIAL_LIST: [
 		{
-			className: "footer__social_link",
-			id: 0,
+			className: "footer__social_link",			
 			src: "./icons/social/telegram.svg",
 			alt: "telegram",
 			href: "https://telegram.me/umnik-rkh",			
 		},
 		{
-			className: "footer__social_link",
-			id: 1,
+			className: "footer__social_link",			
 			src: "./icons/social/gmail.svg",
 			alt: "gmail",
 			href: "mailto:nowhere@gmail.com",			
 		},
 		{
-			className: "footer__social_link",
-			id: 2,
+			className: "footer__social_link",			
 			src: "./icons/social/whatsapp.svg",
 			alt: "whatsapp",
 			href: "https://wa.me/79372222222",			

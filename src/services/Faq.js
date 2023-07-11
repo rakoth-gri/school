@@ -22,11 +22,11 @@ export default class Faq {
 
 		e.target.classList.toggle("active");
 
-		if (this.contents[+e.target.id].offsetHeight) {
-			this.contents[+e.target.id].style.maxHeight = "0px";
+		if (this.contents[+e.target.dataset.id].offsetHeight) {
+			this.contents[+e.target.dataset.id].style.maxHeight = "0px";
 		} else {
-			this.contents[+e.target.id].style.maxHeight = `${
-				this.contents[+e.target.id].firstElementChild.offsetHeight
+			this.contents[+e.target.dataset.id].style.maxHeight = `${
+				this.contents[+e.target.dataset.id].firstElementChild.offsetHeight
 			}px`;
 		}
 	};

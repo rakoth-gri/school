@@ -35,7 +35,7 @@ export default class Tabs {
         if (!target.closest(".tabs__panel_button")) return;        
         this.clearActiveClasses()    
         target.parentElement.classList.toggle("active");    
-        this.renderTabsContent(this.$contentBlock, this.list[+target.parentElement.id]["content"])
+        this.renderTabsContent(this.$contentBlock, this.list[+target.parentElement.dataset.id]["content"])
     }
 
     addEventToContainer() {        

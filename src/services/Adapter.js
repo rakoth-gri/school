@@ -30,7 +30,7 @@ export default class Adapter {
 		"beforeend",
 		`${list.map(
 			({ id, text }, i) => `<li class="${`tabs__panel_button 
-			${i === 0 ? "active" : ""}`}" id="${id}"> <a> ${text} </a></li>`
+			${i === 0 ? "active" : ""}`}" data-id="${id}"> <a> ${text} </a></li>`
 		).join("")}	`
 	)}
 
@@ -43,10 +43,10 @@ export default class Adapter {
             <article class="faq__item">
 				<div class="faq__item_header">
 					<h3>${title}</h3>
-					<i class="${`faq__item_trigger bi bi-chevron-up ${id === "0" ? "active" : ""}`}" id="${id}"></i>
+					<i class="${`faq__item_trigger bi bi-chevron-up ${id === "0" ? "active" : ""}`}" data-id="${id}"></i>
 				</div>
 				<hr>
-				<div class="faq__item_content" style="${id === "0" && "max-height: max-content;"}" id="${id}">
+				<div class="faq__item_content" style="${id === "0" && "max-height: max-content;"}" data-id="${id}">
 					<blockquote class="faq__item_body">
 						<p>
 							${content}
@@ -93,7 +93,6 @@ export default class Adapter {
             </div>`
 		);
     };
-
 
     Tech_Guide(container, list) {
         container.insertAdjacentHTML(

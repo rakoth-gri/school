@@ -116,13 +116,13 @@ function moveToHead(offset) {
 	}
 }
 
-// **ROADMAP_SECTION**
+// **FOOTER_SOCIAL**
 (function renderSocialIcons() {
 	DATA.DOM.SOCIAL_EL.insertAdjacentHTML(
 		"beforeend",
 		DATA.SOCIAL_LIST.map(
-			({ href, src, alt, className, id }) => `
-			<a href="${href}" class="${className}" id='${id}'> 
+			({ href, src, alt, className}) => `
+			<a href="${href}" class="${className}"> 
 				<img src="${src}" alt="${alt}" loading="lazy"> 
 			</a>
 			`
