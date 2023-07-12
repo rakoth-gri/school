@@ -57,7 +57,7 @@ try {
     $mail->isHTML(true);                                  
     $mail->Subject = 'Заявка на сайте www.gricamp.ru';
     $mail->Body = "<article>
-	    <h2 style='color:blue;'> Поступила заявка на сайте www.gri-school.ru </h2>
+	    <h2 style='color:blue;'> Поступила заявка на сайте www.gricamp.ru </h2>
         <ul style='list-style-type:none; font-size: 1.5rem;'>
             <li> Имя: {$FORM['name']} </li>
             <li> Номер телефона: {$FORM['phone']} </li>
