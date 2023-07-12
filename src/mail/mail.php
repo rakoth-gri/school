@@ -50,7 +50,7 @@ try {
     $mail->addAddress('galievi.f@yandex.ru', 'GRI');    
 
     // Attachments    
-    $mail->addAttachment('../img/poster-ellipse.png', 'poster.jpg');    
+    $mail->addAttachment('../img/poster-ellipse.webp', 'poster.jpg');    
 
     // Content
     $mail->isHTML(true);                                  
