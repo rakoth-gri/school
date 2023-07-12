@@ -70,8 +70,7 @@ export default class Form {
 			})
 			.then(() => {
 				setTimeout(() => {
-					DATA.DOM.MODAL_EL.classList.toggle("active");
-					console.log(this.state);					
+					DATA.DOM.MODAL_EL.classList.toggle("active");								
 				}, 1300);
 			});
 	};

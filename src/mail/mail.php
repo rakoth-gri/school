@@ -41,8 +41,9 @@ try {
     $mail->Host       = 'smtp.yandex.ru';                   
     $mail->SMTPAuth   = true;                                  
     $mail->Username   = 'rakoth-gri@yandex.ru';                     
-    $mail->Password   = '5agu7by5';                              
-    $mail->SMTPSecure = 'ssl';            
+    $mail->Password   = '5agu7by5';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;                               
+    // $mail->SMTPSecure = 'ssl';            
     $mail->Port       = 465;                                   
 
     // Recipients
