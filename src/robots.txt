@@ -1,6 +1,2 @@
 User-agent: *
-Allow: /
-Allow: /*
-Allow: /*.css
-Allow: /*.js
-Sitemap: https://rakoth-gri.github.io/sitemap.xml
+Disallow: 

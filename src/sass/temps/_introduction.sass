@@ -6,7 +6,7 @@
     overflow: hidden
 
     &__h1, &__image
-        animation: swimming-out 0.15s linear 0.25s forwards
+        animation: swimming-out linear 0.25s forwards
         opacity: .15
         transform: translateX(-30%)
         width: 45%
@@ -28,3 +28,12 @@
 
         &_poster
             width: 100%
+
+    a
+        display: block
+        margin: var(--app-sm-size) auto
+        width: 70%
+        button
+            @include formBtns
+            width: 100%
+      

@@ -330,10 +330,10 @@ export const DATA = {
 		},
 	],
 	REG_EXP: {
-		name: [/^[A-Z\sА-Яа-яa-z]{2,40}$/, "введите корректное имя"],
-		phone: [/^\+?\d\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$/, "введите корректный номер"],
+		name: [/^[A-Z\sА-Яа-яa-z]{2,40}$/, "неправильное имя"],
+		phone: [/^\+?\d\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$/, "неправильный номер"],
 		select: [/^[a-z_]{1,40}$/, "выберите курс"],
-		textarea: [/.{20,}/s, "введите запрос"],
+		textarea: [/.{20,}/s, "введите не менее 20 символов"],
 	},
 	FAQ_LIST: [
 		{
@@ -468,19 +468,19 @@ export const DATA = {
 			className: "footer__social_link",			
 			src: "./icons/social/telegram.svg",
 			alt: "telegram",
-			href: "https://telegram.me/umnik-rkh",			
+			href: "https://telegram.me/Umnik_rkh",			
 		},
 		{
 			className: "footer__social_link",			
 			src: "./icons/social/gmail.svg",
-			alt: "gmail",
-			href: "mailto:nowhere@gmail.com",			
+			alt: "Яндекс почта",
+			href: "mailto:gri-camp@yandex.ru",			
 		},
 		{
 			className: "footer__social_link",			
 			src: "./icons/social/whatsapp.svg",
 			alt: "whatsapp",
-			href: "https://wa.me/79372222222",			
+			href: "https://wa.me/79172880748",			
 		},
 	]
 };

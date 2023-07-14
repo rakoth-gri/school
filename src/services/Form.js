@@ -62,17 +62,23 @@ export default class Form {
 			return;
 		}
 
-		fetchFormData("mail/mail.php", new FormData(this.$form))			
-			.then(() => {
-				this.$form.reset();
+		document.querySelector(".lds-ripple").classList.toggle("active");
+
+		setTimeout(() => {
+			fetchFormData("mail/mail.php", new FormData(this.$form))			
+			.then(() => {				
 				this.state = updateState(this.$form.elements)
-				DATA.DOM.MODAL_EL.classList.toggle("active");
+				// DATA.DOM.MODAL_EL.classList.toggle("active");
 			})
 			.then(() => {
 				setTimeout(() => {
-					DATA.DOM.MODAL_EL.classList.toggle("active");								
+					// DATA.DOM.MODAL_EL.classList.toggle("active");
+					document.querySelector(".lds-ripple").classList.toggle("active");
+					this.$form.reset();												
 				}, 1300);
 			});
+		}, 300)
+		
 	};
 
 	addListenerToForm() {

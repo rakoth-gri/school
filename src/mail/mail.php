@@ -38,16 +38,16 @@ try {
     // Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
     $mail->isSMTP();                                            
-    $mail->Host       = 'smtp.yandex.ru';                   
+    $mail->Host = 'smtp.yandex.ru';                   
     $mail->SMTPAuth   = true;                                  
-    $mail->Username   = 'rakoth-gri@yandex.ru';                     
-    $mail->Password   = '5agu7by5';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;                               
-    // $mail->SMTPSecure = 'ssl';            
-    $mail->Port       = 465;                                   
+    $mail->Username   = 'gri-camp@yandex.ru';                     
+    $mail->Password   = 'jvlpsyxrnuklabvo';
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->SMTPSecure = 'ssl';                                 
+    $mail->Port = 465;                                   
 
     // Recipients
-    $mail->setFrom('rakoth-gri@yandex.ru', 'gri-school');
+    $mail->setFrom('gri-camp@yandex.ru', 'gri-camp');
     $mail->addAddress('galievi.f@yandex.ru', 'GRI');    
 
     // Attachments    
@@ -65,8 +65,7 @@ try {
             <li> Технология: {$FORM['select']} </li>            
         </ul>
         </article>
-        ";
-    
+        ";    
     $mail->send();
     
 } 

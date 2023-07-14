@@ -18,10 +18,24 @@
 // КНОПКИ LP: 
 @mixin sectBtns   
     padding: var(--app-sm-size)
-    border-radius: var(--app-md-br)
-    background-color: var(--app-logo-color)
-    position: absolute
+    border-radius: var(--app-md-br)   
     font-family: "Roboto"
-    color: var(--app-default-color)
+    font-weight: 400    
+    letter-spacing: 0.6px 
+    color: var(--app-light-color)
+    background-color: var(--app-logo-color)
+    position: absolute   
     &:hover
         color: var(--app-brown-color)
+
+@mixin formBtns   
+    padding: var(--app-sm-size)
+    border-radius: var(--app-md-br)   
+    font-family: "Roboto"
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 0.6px 
+    color: var(--app-light-color)
+    background-color: var(--app-purple-color)      
+    &:hover
+        color: var(--app-brown-color)        
